@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Converter - ToolNook.dev</title>
+    <meta name="description" content="Convert SVG files to PNG, JPEG, WebP and other formats with customizable settings.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>SVG Converter</h2>
+            <p>Convert SVG files to PNG, JPEG, WebP or other web formats with customizable settings. Upload, paste from clipboard, or use a sample SVG.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="input-section">
+                <h3>Input SVG</h3>
+                
+                <div class="input-tabs">
+                    <button class="tab-btn active" data-tab="upload">Upload File</button>
+                    <button class="tab-btn" data-tab="paste">Paste SVG</button>
+                </div>
+                
+                <div class="tab-content active" id="upload-tab">
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-message">
+                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p class="upload-text">Drag & drop your SVG file here<br>or click to browse</p>
+                            <p class="file-name" id="file-name"></p>
+                        </div>
+                        <input type="file" id="file-input" accept=".svg" class="file-input" />
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="paste-tab">
+                    <div class="form-group">
+                        <label for="svg-paste">Paste SVG code here:</label>
+                        <textarea id="svg-paste" placeholder="Paste your SVG code here..."></textarea>
+                        <div class="paste-actions">
+                            <button id="paste-btn" class="btn btn-small">Paste from Clipboard</button>
+                            <button id="clear-btn" class="btn btn-small btn-outline">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-link">
+                    <a href="/assets/sample.svg" download="sample.svg">Download sample SVG</a> to test the converter
+                </div>
+
+                <div class="settings" id="settings">
+                    <h3>Conversion Settings</h3>
+                    
+                    <div class="form-group">
+                        <label for="output-format">Output Format:</label>
+                        <select id="output-format">
+                            <option value="png">PNG - High quality with transparency</option>
+                            <option value="jpeg">JPEG - Smaller file size, no transparency</option>
+                            <option value="webp">WebP - Modern format with good compression</option>
+                            <option value="avif">AVIF - Next-gen format (if supported)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="scale">Scale Factor:</label>
+                        <input type="number" id="scale" min="1" max="10" value="2" step="0.5">
+                        <span class="help-text">Higher values create larger output files</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="background">Background Color:</label>
+                        <input type="color" id="background" value="#ffffff">
+                        <span class="help-text">Set the background color (transparent for PNG)</span>
+                    </div>
+                    
+                    <div class="form-group" id="quality-group">
+                        <label for="quality">Quality (for JPEG/WebP/AVIF):</label>
+                        <input type="range" id="quality" min="0" max="100" value="90">
+                        <span class="quality-value">90%</span>
+                        <span class="help-text">Lower quality = smaller file size</span>
+                    </div>
+                    
+                    <button id="convert-btn" class="btn">Convert SVG</button>
+                </div>
+            </div>
+
+            <div class="output-section" id="output-section">
+                <h3>Preview</h3>
+                <div class="preview-tabs">
+                    <button class="preview-tab-btn active" data-preview="svg">SVG</button>
+                    <button class="preview-tab-btn" data-preview="output">Output</button>
+                </div>
+                
+                <div class="preview-container">
+                    <div id="preview-svg" class="preview-content active">
+                        <p class="placeholder">SVG preview will appear here</p>
+                    </div>
+                    <div id="preview-output" class="preview-content">
+                        <p class="placeholder">Converted output will appear here</p>
+                    </div>
+                </div>
+                
+                <div class="conversion-info" id="conversion-info">
+                    <div class="info-item">
+                        <span class="info-label">Original Size:</span>
+                        <span id="original-size">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Converted Size:</span>
+                        <span id="converted-size">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dimensions:</span>
+                        <span id="dimensions">-</span>
+                    </div>
+                </div>
+                
+                <div id="download-container" class="download-container hidden">
+                    <a id="download-link" class="btn">Download</a>
+                    <div class="download-options">
+                        <button id="copy-data-url" class="btn btn-small btn-outline">Copy Data URL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use</p>
+        </div>
+    </footer>
+</body>
+</html>

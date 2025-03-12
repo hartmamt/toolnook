@@ -1,0 +1,59 @@
+/* Tool-specific CSS */
+
+.tool-header {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.input-section, 
+.output-section {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#process-btn {
+    margin-top: 1rem;
+}
+
+#result {
+    background-color: #f7f9fc;
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 100px;
+}
+
+.placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Add your tool-specific styling below */

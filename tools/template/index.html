@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Name - ToolNook.dev</title>
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Tool Name</h2>
+            <p>Brief description about what this tool does and how to use it.</p>
+        </div>
+
+        <div class="tool-container">
+            <!-- Tool-specific content goes here -->
+            <div class="input-section">
+                <h3>Input</h3>
+                <!-- Input controls for the tool -->
+                <div class="form-group">
+                    <label for="input-field">Input Field:</label>
+                    <input type="text" id="input-field" placeholder="Enter value...">
+                </div>
+                <button id="process-btn" class="btn">Process</button>
+            </div>
+
+            <div class="output-section">
+                <h3>Output</h3>
+                <div id="result">
+                    <!-- Results will appear here -->
+                    <p class="placeholder">Results will appear here after processing</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use</p>
+        </div>
+    </footer>
+</body>
+</html>

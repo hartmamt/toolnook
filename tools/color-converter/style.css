@@ -1,0 +1,108 @@
+/* Color Converter specific CSS */
+
+.color-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#color-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    background-color: #333;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#color-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.format-selectors {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.format-selectors .form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #f1f3f5;
+    border-radius: 4px;
+}
+
+.format-label {
+    font-weight: 600;
+    width: 60px;
+}
+
+.result-value {
+    flex: 1;
+    font-family: monospace;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    border-radius: 3px;
+    margin: 0 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.copy-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.copy-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .format-label {
+        width: auto;
+    }
+    
+    .result-value {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+    
+    .copy-btn {
+        align-self: flex-end;
+    }
+}
