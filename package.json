@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "echo \"No build step required\"",
-    "vercel-build": "echo \"Static files ready for deployment\""
+    "build": "node -e \"console.log('Static site ready for deployment')\"",
+    "vercel-build": "mkdir -p .vercel-build && touch .vercel-build/static-build.txt"
   },
   "keywords": [
     "tools",

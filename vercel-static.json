@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": ".",
+  "framework": null,
+  "rewrites": [
+    { "source": "/common/:path*", "destination": "/common/:path*" },
+    { "source": "/tools/:path*", "destination": "/tools/:path*" },
+    { "source": "/assets/:path*", "destination": "/public/assets/:path*" },
+    { "source": "/(.*)", "destination": "/public/$1" }
+  ]
+}

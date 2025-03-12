@@ -101,6 +101,33 @@ footer {
     margin-top: 2rem;
 }
 
+/* Ad containers */
+.ad-container {
+    margin: 1.5rem auto;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-height: 90px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.ad-horizontal {
+    min-height: 90px;
+}
+
+.ad-vertical {
+    min-height: 280px;
+}
+
+@media (max-width: 768px) {
+    .ad-container {
+        min-height: 50px;
+    }
+}
+
 /* Tool-specific styling */
 .tool-container {
     background-color: white;
