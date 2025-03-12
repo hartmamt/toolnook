@@ -252,4 +252,4 @@ settings:
   notifications: true`;
         }
     }
-});
+};

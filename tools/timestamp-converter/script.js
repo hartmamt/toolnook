@@ -343,4 +343,4 @@ function initializeConverter() {
                 alert('Failed to copy to clipboard');
             });
     }
-});
+};

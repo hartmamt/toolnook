@@ -420,4 +420,4 @@ function initializeHashGenerator() {
                 alert('Failed to copy to clipboard');
             });
     }
-});
+};
