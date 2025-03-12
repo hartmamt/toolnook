@@ -1,0 +1,103 @@
+/* Code Formatter Tool CSS */
+
+.tool-header {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.input-section, 
+.output-section {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea {
+    font-family: monospace;
+    resize: vertical;
+    min-height: 200px;
+}
+
+select {
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.btn-small {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+#process-btn {
+    margin-top: 1rem;
+}
+
+#result {
+    background-color: #f7f9fc;
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 200px;
+    overflow: auto;
+}
+
+#result pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .tool-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+}

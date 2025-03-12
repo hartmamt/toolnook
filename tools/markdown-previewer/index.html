@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Previewer - ToolNook.dev</title>
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Markdown Previewer</h2>
+            <p>Write markdown and instantly preview or export HTML.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="input-section">
+                <h3>Markdown Input</h3>
+                <div class="form-group">
+                    <div class="button-group">
+                        <button id="sample-btn" class="btn btn-small">Load Sample</button>
+                        <button id="clear-btn" class="btn btn-small">Clear</button>
+                    </div>
+                    <textarea id="markdown-input" rows="15" placeholder="Write or paste your markdown here..."></textarea>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h3>HTML Preview</h3>
+                <div class="form-group">
+                    <div class="button-group">
+                        <button id="copy-html-btn" class="btn btn-small">Copy HTML</button>
+                        <button id="download-html-btn" class="btn btn-small">Download HTML</button>
+                    </div>
+                </div>
+                <div id="preview-container">
+                    <div id="markdown-preview">
+                        <p class="placeholder">Preview will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="markdown-help">
+            <h3>Markdown Cheat Sheet</h3>
+            <div class="help-grid">
+                <div class="help-item">
+                    <h4>Headers</h4>
+                    <pre># Header 1
+## Header 2
+### Header 3</pre>
+                </div>
+                <div class="help-item">
+                    <h4>Emphasis</h4>
+                    <pre>*italic* or _italic_
+**bold** or __bold__
+~~strikethrough~~</pre>
+                </div>
+                <div class="help-item">
+                    <h4>Lists</h4>
+                    <pre>- Item 1
+- Item 2
+  - Nested item
+
+1. Ordered item 1
+2. Ordered item 2</pre>
+                </div>
+                <div class="help-item">
+                    <h4>Links & Images</h4>
+                    <pre>[Link text](https://example.com)
+![Alt text](image-url.jpg)</pre>
+                </div>
+                <div class="help-item">
+                    <h4>Code</h4>
+                    <pre>`inline code`
+
+```javascript
+// code block
+function hello() {
+  console.log("Hello");
+}
+```</pre>
+                </div>
+                <div class="help-item">
+                    <h4>Blockquotes & Dividers</h4>
+                    <pre>> This is a blockquote
+
+---
+Horizontal rule above</pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use</p>
+        </div>
+    </footer>
+</body>
+</html>

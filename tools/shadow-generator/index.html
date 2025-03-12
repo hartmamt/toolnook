@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free CSS Shadow Generator - Box & Text Shadow Creator | ToolNook.dev</title>
+    <meta name="description" content="Create customized CSS box shadows and text shadows with real-time preview. Adjust shadow properties visually and copy the code with one click.">
+    <meta name="keywords" content="css shadow generator, box shadow, text shadow, shadow creator, css effects, web design tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free CSS Shadow Generator">
+    <meta property="og:description" content="Create customized CSS box shadows and text shadows with real-time preview. Adjust shadow properties visually and copy the code.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/tools/shadow-generator/">
+    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <link rel="canonical" href="https://toolnook.dev/tools/shadow-generator/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
+     crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CSS Shadow Generator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Create customized CSS box shadows and text shadows with real-time preview. Adjust shadow properties visually and copy the code with one click.",
+      "url": "https://toolnook.dev/tools/shadow-generator/",
+      "featureList": [
+        "Box shadow generator",
+        "Text shadow generator",
+        "Multiple shadow layers",
+        "Customize shadow color",
+        "Adjust blur, spread, and position",
+        "Real-time preview",
+        "Copy CSS code with one click"
+      ],
+      "keywords": "css shadow generator, box shadow, text shadow, shadow creator, css effects, web design tools"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>CSS Shadow Generator</h2>
+            <p>Customize shadows visually and copy the CSS.</p>
+        </div>
+        
+        <!-- Ad banner below header -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="3456789012"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="tool-container">
+            <!-- Shadow Type Selector -->
+            <div class="shadow-type-selector">
+                <div class="tabs">
+                    <button id="box-shadow-btn" class="tab-btn active">Box Shadow</button>
+                    <button id="text-shadow-btn" class="tab-btn">Text Shadow</button>
+                </div>
+            </div>
+
+            <div class="shadow-layout">
+                <!-- Preview Area -->
+                <div class="preview-container">
+                    <div class="preview-wrapper">
+                        <div id="box-shadow-preview" class="shadow-preview active">
+                            <div class="shadow-box">Shadow</div>
+                        </div>
+                        <div id="text-shadow-preview" class="shadow-preview">
+                            <div class="shadow-text">Text Shadow</div>
+                        </div>
+                    </div>
+                    <p class="preview-hint">Change background: 
+                        <button class="preview-bg-btn light active" data-bg="light"></button>
+                        <button class="preview-bg-btn dark" data-bg="dark"></button>
+                        <button class="preview-bg-btn pattern" data-bg="pattern"></button>
+                    </p>
+                </div>
+
+                <!-- Controls Area -->
+                <div class="controls-container">
+                    <!-- Shadow Layers -->
+                    <div class="shadow-layers">
+                        <h3>Shadow Layers <button id="add-layer" class="btn-small">+ Add Layer</button></h3>
+                        <div id="layers-container">
+                            <div class="shadow-layer active" data-id="0">
+                                <div class="layer-header">
+                                    <span class="layer-title">Layer 1</span>
+                                    <div class="layer-actions">
+                                        <button class="toggle-layer">⌄</button>
+                                        <button class="remove-layer" disabled>×</button>
+                                    </div>
+                                </div>
+                                <div class="layer-controls">
+                                    <!-- X Offset -->
+                                    <div class="control-row">
+                                        <label for="x-offset-0">X Offset:</label>
+                                        <input type="range" id="x-offset-0" class="x-offset" min="-50" max="50" value="5">
+                                        <div class="value-display">
+                                            <input type="number" id="x-offset-value-0" class="x-offset-value" value="5">
+                                            <span class="unit">px</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Y Offset -->
+                                    <div class="control-row">
+                                        <label for="y-offset-0">Y Offset:</label>
+                                        <input type="range" id="y-offset-0" class="y-offset" min="-50" max="50" value="5">
+                                        <div class="value-display">
+                                            <input type="number" id="y-offset-value-0" class="y-offset-value" value="5">
+                                            <span class="unit">px</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Blur Radius -->
+                                    <div class="control-row">
+                                        <label for="blur-0">Blur:</label>
+                                        <input type="range" id="blur-0" class="blur" min="0" max="100" value="10">
+                                        <div class="value-display">
+                                            <input type="number" id="blur-value-0" class="blur-value" min="0" value="10">
+                                            <span class="unit">px</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Spread Radius (Box Shadow only) -->
+                                    <div class="control-row spread-row">
+                                        <label for="spread-0">Spread:</label>
+                                        <input type="range" id="spread-0" class="spread" min="-50" max="50" value="0">
+                                        <div class="value-display">
+                                            <input type="number" id="spread-value-0" class="spread-value" value="0">
+                                            <span class="unit">px</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Color -->
+                                    <div class="control-row">
+                                        <label for="color-0">Color:</label>
+                                        <input type="color" id="color-0" class="color" value="#000000">
+                                        <div class="value-display">
+                                            <input type="text" id="color-value-0" class="color-value" value="#000000">
+                                            <input type="range" id="opacity-0" class="opacity" min="0" max="100" value="20">
+                                            <span class="opacity-value" id="opacity-value-0">20%</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Inset (Box Shadow only) -->
+                                    <div class="control-row inset-row">
+                                        <label for="inset-0">Inset:</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="inset-0" class="inset">
+                                            <label for="inset-0"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Element Customization (For Box Shadow) -->
+                    <div id="box-element-customization" class="element-customization">
+                        <h3>Element Style</h3>
+                        
+                        <!-- Background Color -->
+                        <div class="control-row">
+                            <label for="box-bg-color">Background:</label>
+                            <input type="color" id="box-bg-color" value="#ffffff">
+                            <div class="value-display">
+                                <input type="text" id="box-bg-color-value" value="#ffffff">
+                            </div>
+                        </div>
+                        
+                        <!-- Border Radius -->
+                        <div class="control-row">
+                            <label for="border-radius">Border Radius:</label>
+                            <input type="range" id="border-radius" min="0" max="50" value="4">
+                            <div class="value-display">
+                                <input type="number" id="border-radius-value" min="0" value="4">
+                                <span class="unit">px</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Width & Height -->
+                        <div class="control-row">
+                            <label for="element-width">Size:</label>
+                            <div class="size-inputs">
+                                <div class="size-input">
+                                    <span>W:</span>
+                                    <input type="number" id="element-width" min="50" max="500" value="150">
+                                    <span class="unit">px</span>
+                                </div>
+                                <div class="size-input">
+                                    <span>H:</span>
+                                    <input type="number" id="element-height" min="50" max="500" value="150">
+                                    <span class="unit">px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Text Customization (For Text Shadow) -->
+                    <div id="text-element-customization" class="element-customization">
+                        <h3>Text Style</h3>
+                        
+                        <!-- Text Color -->
+                        <div class="control-row">
+                            <label for="text-color">Text Color:</label>
+                            <input type="color" id="text-color" value="#444444">
+                            <div class="value-display">
+                                <input type="text" id="text-color-value" value="#444444">
+                            </div>
+                        </div>
+                        
+                        <!-- Font Size -->
+                        <div class="control-row">
+                            <label for="font-size">Font Size:</label>
+                            <input type="range" id="font-size" min="12" max="80" value="40">
+                            <div class="value-display">
+                                <input type="number" id="font-size-value" min="12" value="40">
+                                <span class="unit">px</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Font Weight -->
+                        <div class="control-row">
+                            <label for="font-weight">Font Weight:</label>
+                            <select id="font-weight">
+                                <option value="normal">Normal</option>
+                                <option value="bold" selected>Bold</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                                <option value="500">500</option>
+                                <option value="600">600</option>
+                                <option value="700">700</option>
+                                <option value="800">800</option>
+                                <option value="900">900</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Font Family -->
+                        <div class="control-row">
+                            <label for="font-family">Font Family:</label>
+                            <select id="font-family">
+                                <option value="Arial, sans-serif">Arial</option>
+                                <option value="'Helvetica Neue', Helvetica, sans-serif">Helvetica</option>
+                                <option value="'Times New Roman', serif">Times New Roman</option>
+                                <option value="Georgia, serif">Georgia</option>
+                                <option value="Verdana, sans-serif">Verdana</option>
+                                <option value="'Courier New', monospace">Courier New</option>
+                                <option value="Impact, sans-serif">Impact</option>
+                                <option value="'Open Sans', sans-serif">Open Sans</option>
+                                <option value="'Roboto', sans-serif">Roboto</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Output -->
+            <div class="code-output">
+                <div class="code-header">
+                    <h3>CSS Code</h3>
+                    <button id="copy-css" class="btn">Copy CSS</button>
+                </div>
+                <pre id="css-code" class="css-code"></pre>
+            </div>
+            
+            <!-- Templates and Presets -->
+            <div class="presets">
+                <h3>Quick Presets</h3>
+                <div class="preset-buttons">
+                    <button class="preset-btn" data-preset="subtle">Subtle Shadow</button>
+                    <button class="preset-btn" data-preset="medium">Medium Shadow</button>
+                    <button class="preset-btn" data-preset="large">Large Shadow</button>
+                    <button class="preset-btn" data-preset="inset">Inset Shadow</button>
+                    <button class="preset-btn" data-preset="layered">Layered Shadow</button>
+                    <button class="preset-btn" data-preset="neon">Neon Glow</button>
+                    <button class="preset-btn" data-preset="3d">3D Text</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad banner above footer -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="7654321098"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use | <a href="/privacy.html" style="color:white;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Calculator - ToolNook.dev</title>
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Physics Calculator</h2>
+            <p>Solve common physics problems including projectile motion, kinematics, and more.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="input-section">
+                <h3>Projectile Motion Calculator</h3>
+                <div class="form-group">
+                    <label for="calc-type">Calculation Type:</label>
+                    <select id="calc-type" class="form-control">
+                        <option value="time-to-ground">Time to Hit Ground</option>
+                        <option value="max-height">Maximum Height</option>
+                        <option value="range">Horizontal Range</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="initial-velocity">Initial Velocity (ft/sec or m/s):</label>
+                    <input type="number" id="initial-velocity" placeholder="e.g., 16">
+                </div>
+                <div class="form-group">
+                    <label for="initial-height">Initial Height (ft or m):</label>
+                    <input type="number" id="initial-height" placeholder="e.g., 5">
+                </div>
+                <div class="form-group">
+                    <label for="angle">Angle from Horizontal (degrees):</label>
+                    <input type="number" id="angle" placeholder="e.g., 90 for straight up" value="90">
+                </div>
+                <div class="form-group">
+                    <label for="units">Units:</label>
+                    <select id="units" class="form-control">
+                        <option value="imperial">Imperial (ft, ft/sec)</option>
+                        <option value="metric">Metric (m, m/s)</option>
+                    </select>
+                </div>
+                <button id="process-btn" class="btn">Calculate</button>
+            </div>
+
+            <div class="output-section">
+                <h3>Result</h3>
+                <div id="result">
+                    <p class="placeholder">Results will appear here after calculation</p>
+                </div>
+                <div id="solution-steps" class="hidden">
+                    <h4>Solution Steps</h4>
+                    <div id="steps-content"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use</p>
+        </div>
+    </footer>
+</body>
+</html>

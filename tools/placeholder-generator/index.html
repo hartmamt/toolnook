@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Placeholder Image Generator - Custom Size & Colors | ToolNook.dev</title>
+    <meta name="description" content="Generate custom placeholder images instantly with specified dimensions, colors, and text. Perfect for web design, mockups, and prototypes.">
+    <meta name="keywords" content="placeholder image generator, custom placeholder, image generator, web design tool, mockup images">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free Placeholder Image Generator">
+    <meta property="og:description" content="Generate custom placeholder images with specified dimensions, colors, and text. Download or use direct URL in your projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/tools/placeholder-generator/">
+    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <link rel="canonical" href="https://toolnook.dev/tools/placeholder-generator/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
+     crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Placeholder Image Generator",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Generate custom placeholder images with specified dimensions, colors, and text for web design, mockups, and prototypes.",
+      "url": "https://toolnook.dev/tools/placeholder-generator/",
+      "featureList": [
+        "Custom image dimensions",
+        "Background and text color customization",
+        "Text overlay options",
+        "Image format selection (PNG, JPEG)",
+        "Download images",
+        "Direct image URL support"
+      ],
+      "keywords": "placeholder image generator, custom placeholder, image generator, web design tool, mockup images"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Placeholder Image Generator</h2>
+            <p>Instantly generate placeholder images with specified dimensions.</p>
+        </div>
+        
+        <!-- Ad banner below header -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="3456789012"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="tool-container">
+            <div class="placeholder-layout">
+                <!-- Controls -->
+                <div class="controls-container">
+                    <h3>Image Settings</h3>
+                    
+                    <!-- Image Dimensions -->
+                    <div class="control-group">
+                        <h4>Dimensions</h4>
+                        <div class="control-row">
+                            <div class="dimension-input">
+                                <label for="image-width">Width:</label>
+                                <input type="number" id="image-width" min="10" max="2000" value="400">
+                                <span class="unit">px</span>
+                            </div>
+                            <div class="dimension-input">
+                                <label for="image-height">Height:</label>
+                                <input type="number" id="image-height" min="10" max="2000" value="300">
+                                <span class="unit">px</span>
+                            </div>
+                        </div>
+                        <div class="control-row">
+                            <div class="aspect-ratio">
+                                <label>
+                                    <input type="checkbox" id="maintain-ratio">
+                                    Maintain aspect ratio
+                                </label>
+                            </div>
+                            <div class="preset-sizes">
+                                <label>Presets:</label>
+                                <div class="preset-buttons">
+                                    <button class="preset-btn" data-width="1920" data-height="1080">HD</button>
+                                    <button class="preset-btn" data-width="1280" data-height="720">720p</button>
+                                    <button class="preset-btn" data-width="800" data-height="600">4:3</button>
+                                    <button class="preset-btn" data-width="400" data-height="300">Small</button>
+                                    <button class="preset-btn" data-width="300" data-height="300">Square</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Colors -->
+                    <div class="control-group">
+                        <h4>Colors</h4>
+                        <div class="control-row">
+                            <div class="color-input">
+                                <label for="bg-color">Background:</label>
+                                <input type="color" id="bg-color" value="#cccccc">
+                                <input type="text" id="bg-color-value" value="#cccccc">
+                            </div>
+                            <div class="color-input">
+                                <label for="text-color">Text:</label>
+                                <input type="color" id="text-color" value="#333333">
+                                <input type="text" id="text-color-value" value="#333333">
+                            </div>
+                        </div>
+                        <div class="random-colors">
+                            <button id="random-colors-btn" class="btn-small">Random Colors</button>
+                            <button id="swap-colors-btn" class="btn-small">Swap Colors</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Text Options -->
+                    <div class="control-group">
+                        <h4>Text Content</h4>
+                        <div class="control-row">
+                            <div class="text-type-option">
+                                <label for="text-type">Display:</label>
+                                <select id="text-type">
+                                    <option value="dimensions">Dimensions</option>
+                                    <option value="custom">Custom Text</option>
+                                    <option value="none">No Text</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="custom-text-container" class="control-row" style="display: none;">
+                            <div class="text-input">
+                                <label for="custom-text">Custom Text:</label>
+                                <input type="text" id="custom-text" placeholder="Enter custom text">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Format Options -->
+                    <div class="control-group">
+                        <h4>Image Format</h4>
+                        <div class="control-row">
+                            <div class="format-options">
+                                <label>
+                                    <input type="radio" name="format" value="png" checked>
+                                    PNG
+                                </label>
+                                <label>
+                                    <input type="radio" name="format" value="jpeg">
+                                    JPEG
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Actions -->
+                    <div class="actions">
+                        <button id="generate-btn" class="btn">Generate Image</button>
+                        <button id="download-btn" class="btn">Download Image</button>
+                    </div>
+                </div>
+                
+                <!-- Preview -->
+                <div class="preview-container">
+                    <h3>Preview</h3>
+                    <div class="image-preview">
+                        <canvas id="preview-canvas"></canvas>
+                    </div>
+                    <div class="image-url">
+                        <h4>Direct Image URL</h4>
+                        <div class="url-container">
+                            <input type="text" id="image-url" readonly>
+                            <button id="copy-url-btn" class="btn-small">Copy</button>
+                        </div>
+                        <p class="url-note">Note: This is a data URL that can be used directly in HTML or CSS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad banner above footer -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="7654321098"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use | <a href="/privacy.html" style="color:white;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

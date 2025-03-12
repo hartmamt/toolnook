@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Formatter - ToolNook.dev</title>
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Code Formatter</h2>
+            <p>Format JavaScript, HTML, CSS, XML, JSON, or SQL code instantly with proper indentation and style.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="input-section">
+                <h3>Input</h3>
+                <div class="form-group">
+                    <label for="language-select">Select Language:</label>
+                    <select id="language-select">
+                        <option value="javascript">JavaScript</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="xml">XML</option>
+                        <option value="json">JSON</option>
+                        <option value="sql">SQL</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="input-code">Paste your code:</label>
+                    <textarea id="input-code" rows="10" placeholder="Paste your unformatted code here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="indent-select">Indentation:</label>
+                    <select id="indent-select">
+                        <option value="2">2 spaces</option>
+                        <option value="4" selected>4 spaces</option>
+                        <option value="tab">Tab</option>
+                    </select>
+                </div>
+                <button id="process-btn" class="btn">Format Code</button>
+            </div>
+
+            <div class="output-section">
+                <h3>Output</h3>
+                <div class="form-group">
+                    <div class="button-group">
+                        <button id="copy-btn" class="btn btn-small">Copy</button>
+                    </div>
+                </div>
+                <div id="result">
+                    <p class="placeholder">Formatted code will appear here</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use</p>
+        </div>
+    </footer>
+</body>
+</html>

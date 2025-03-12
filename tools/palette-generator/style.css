@@ -1,0 +1,280 @@
+/* Color Palette Generator Tool Styles */
+
+.tool-container {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Controls */
+.palette-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+}
+
+.control-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.control-section h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.control-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="color"] {
+    width: 50px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+}
+
+select, 
+input[type="text"],
+input[type="number"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 150px;
+}
+
+.format-options {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.format-options .form-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+}
+
+.format-options label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* Palette Display */
+.palette-display {
+    margin-bottom: 1.5rem;
+}
+
+.colors-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    min-height: 120px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.color-swatch {
+    flex: 1;
+    min-width: 100px;
+    height: 120px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.color-swatch:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.color-swatch.selected {
+    box-shadow: 0 0 0 3px #000, 0 0 0 6px #fff;
+    z-index: 2;
+}
+
+.color-value {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.color-swatch:hover .color-value {
+    opacity: 1;
+}
+
+.palette-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Color Adjuster */
+.color-adjuster {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.color-adjuster h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.adjuster-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.slider-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.slider-group label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.slider-group input[type="range"] {
+    width: 100%;
+}
+
+.value-display {
+    width: 40px;
+    text-align: right;
+    font-family: monospace;
+}
+
+.select-color-prompt {
+    width: 100%;
+    text-align: center;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100px;
+}
+
+.color-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.color-code {
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+/* Export Section */
+.export-section {
+    margin-bottom: 1rem;
+}
+
+.export-section h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.code-container {
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+pre#export-code {
+    font-family: monospace;
+    white-space: pre-wrap;
+    margin: 0;
+    padding: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #282c34;
+    color: #abb2bf;
+    border-radius: 4px;
+}
+
+#copy-export {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .control-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .format-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .colors-container {
+        flex-wrap: wrap;
+    }
+    
+    .color-swatch {
+        min-width: 50%;
+        flex: auto;
+    }
+    
+    .palette-actions {
+        flex-direction: column;
+    }
+}

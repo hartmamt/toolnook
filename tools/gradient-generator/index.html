@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free CSS Gradient Generator - Linear, Radial, Conic | ToolNook.dev</title>
+    <meta name="description" content="Easily create CSS gradients with this free online tool. Generate linear, radial, and conic gradient CSS code with live preview and one-click copying.">
+    <meta name="keywords" content="css gradient generator, linear gradient, radial gradient, conic gradient, css generator, background gradient">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free CSS Gradient Generator">
+    <meta property="og:description" content="Create beautiful CSS gradients with this free online tool. Generate linear, radial, and conic gradient CSS code with live preview and one-click copying.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/tools/gradient-generator/">
+    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <link rel="canonical" href="https://toolnook.dev/tools/gradient-generator/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
+     crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CSS Gradient Generator",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Generate CSS code for linear, radial, and conic gradients with live preview. Free online tool for web developers and designers.",
+      "url": "https://toolnook.dev/tools/gradient-generator/",
+      "featureList": [
+        "Linear gradient generator",
+        "Radial gradient generator",
+        "Conic gradient generator", 
+        "Live gradient preview",
+        "Copy CSS code with one click",
+        "Multiple color stop support"
+      ],
+      "keywords": "css gradient generator, linear gradient, radial gradient, conic gradient, css generator, background gradient"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>CSS Gradient Generator</h2>
+            <p>Quickly generate CSS code for linear, radial, and conic gradients.</p>
+        </div>
+        
+        <!-- Ad banner below header -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="3456789012"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="tool-container">
+            <!-- Gradient Type Selector -->
+            <div class="gradient-type-selector">
+                <div class="tabs">
+                    <button id="linear-btn" class="tab-btn active">Linear</button>
+                    <button id="radial-btn" class="tab-btn">Radial</button>
+                    <button id="conic-btn" class="tab-btn">Conic</button>
+                </div>
+            </div>
+
+            <!-- Gradient Preview -->
+            <div class="gradient-preview-container">
+                <div id="gradient-preview"></div>
+            </div>
+
+            <!-- Gradient Controls -->
+            <div class="controls-container">
+                <!-- Linear Gradient Controls -->
+                <div id="linear-controls" class="gradient-controls active">
+                    <div class="form-group">
+                        <label for="linear-direction">Direction:</label>
+                        <select id="linear-direction">
+                            <option value="to right">Left to Right</option>
+                            <option value="to left">Right to Left</option>
+                            <option value="to bottom">Top to Bottom</option>
+                            <option value="to top">Bottom to Top</option>
+                            <option value="to bottom right">Top Left to Bottom Right</option>
+                            <option value="to bottom left">Top Right to Bottom Left</option>
+                            <option value="to top right">Bottom Left to Top Right</option>
+                            <option value="to top left">Bottom Right to Top Left</option>
+                            <option value="custom">Custom Angle</option>
+                        </select>
+                    </div>
+                    <div id="angle-container" class="form-group" style="display: none;">
+                        <label for="linear-angle">Angle (deg):</label>
+                        <input type="number" id="linear-angle" min="0" max="360" value="90">
+                    </div>
+                </div>
+
+                <!-- Radial Gradient Controls -->
+                <div id="radial-controls" class="gradient-controls">
+                    <div class="form-group">
+                        <label for="radial-shape">Shape:</label>
+                        <select id="radial-shape">
+                            <option value="circle">Circle</option>
+                            <option value="ellipse">Ellipse</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="radial-position">Position:</label>
+                        <select id="radial-position">
+                            <option value="center">Center</option>
+                            <option value="top">Top</option>
+                            <option value="bottom">Bottom</option>
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                            <option value="top left">Top Left</option>
+                            <option value="top right">Top Right</option>
+                            <option value="bottom left">Bottom Left</option>
+                            <option value="bottom right">Bottom Right</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="radial-size">Size:</label>
+                        <select id="radial-size">
+                            <option value="">Default</option>
+                            <option value="closest-side">Closest Side</option>
+                            <option value="closest-corner">Closest Corner</option>
+                            <option value="farthest-side">Farthest Side</option>
+                            <option value="farthest-corner">Farthest Corner</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Conic Gradient Controls -->
+                <div id="conic-controls" class="gradient-controls">
+                    <div class="form-group">
+                        <label for="conic-angle">Starting Angle (deg):</label>
+                        <input type="number" id="conic-angle" min="0" max="360" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="conic-position">Position:</label>
+                        <select id="conic-position">
+                            <option value="center">Center</option>
+                            <option value="top">Top</option>
+                            <option value="bottom">Bottom</option>
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                            <option value="top left">Top Left</option>
+                            <option value="top right">Top Right</option>
+                            <option value="bottom left">Bottom Left</option>
+                            <option value="bottom right">Bottom Right</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Color Stops -->
+                <div class="color-stops-container">
+                    <h3>Color Stops</h3>
+                    <div id="color-stops">
+                        <div class="color-stop" data-index="0">
+                            <input type="color" class="color-picker" value="#ff5757">
+                            <input type="number" class="stop-position" min="0" max="100" value="0">
+                            <span class="percent-sign">%</span>
+                            <button class="delete-stop" disabled>×</button>
+                        </div>
+                        <div class="color-stop" data-index="1">
+                            <input type="color" class="color-picker" value="#5271ff">
+                            <input type="number" class="stop-position" min="0" max="100" value="100">
+                            <span class="percent-sign">%</span>
+                            <button class="delete-stop" disabled>×</button>
+                        </div>
+                    </div>
+                    <button id="add-color-stop" class="btn btn-small">+ Add Color Stop</button>
+                </div>
+
+                <!-- Random Gradient Button -->
+                <button id="random-gradient" class="btn btn-full">Random Gradient</button>
+            </div>
+
+            <!-- CSS Output -->
+            <div class="css-output-container">
+                <h3>CSS Code</h3>
+                <div class="code-container">
+                    <pre id="css-code"></pre>
+                    <button id="copy-css" class="btn">Copy CSS</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad banner above footer -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="7654321098"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use | <a href="/privacy.html" style="color:white;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

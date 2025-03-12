@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diff Checker - ToolNook.dev</title>
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Diff Checker</h2>
+            <p>Quickly compare differences between two snippets of text or code.</p>
+        </div>
+
+        <div class="tool-container">
+            <div class="input-section">
+                <h3>Inputs</h3>
+                <div class="form-controls">
+                    <button id="sample-btn" class="btn btn-small">Load Sample</button>
+                    <button id="clear-btn" class="btn btn-small">Clear All</button>
+                    <button id="swap-btn" class="btn btn-small">Swap</button>
+                </div>
+                
+                <div class="input-grid">
+                    <div class="form-group">
+                        <label for="original-text">Original Text:</label>
+                        <textarea id="original-text" rows="15" placeholder="Paste your original text here..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="modified-text">Modified Text:</label>
+                        <textarea id="modified-text" rows="15" placeholder="Paste your modified text here..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="options-section">
+                    <div class="form-group inline">
+                        <label for="diff-type">Diff Type:</label>
+                        <select id="diff-type">
+                            <option value="char">Character by Character</option>
+                            <option value="word" selected>Word by Word</option>
+                            <option value="line">Line by Line</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group inline">
+                        <label for="ignore-case">
+                            <input type="checkbox" id="ignore-case"> Ignore Case
+                        </label>
+                    </div>
+                    
+                    <div class="form-group inline">
+                        <label for="ignore-whitespace">
+                            <input type="checkbox" id="ignore-whitespace"> Ignore Whitespace
+                        </label>
+                    </div>
+                </div>
+                
+                <button id="compare-btn" class="btn">Compare</button>
+            </div>
+
+            <div class="output-section">
+                <h3>Diff Results</h3>
+                <div id="stats-container">
+                    <div id="diff-stats">
+                        <p class="placeholder">Compare texts to see statistics</p>
+                    </div>
+                </div>
+                <div id="diff-result">
+                    <p class="placeholder">Results will appear here after comparing</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use</p>
+        </div>
+    </footer>
+</body>
+</html>

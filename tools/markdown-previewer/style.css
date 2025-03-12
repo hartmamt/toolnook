@@ -1,0 +1,244 @@
+/* Markdown Previewer Tool CSS */
+
+.tool-header {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.tool-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .tool-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.input-section, 
+.output-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.btn-small {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+#markdown-input {
+    flex-grow: 1;
+    min-height: 300px;
+    font-family: monospace;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+#preview-container {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: auto;
+    min-height: 300px;
+}
+
+#markdown-preview {
+    padding: 1rem;
+}
+
+#markdown-preview h1,
+#markdown-preview h2,
+#markdown-preview h3,
+#markdown-preview h4,
+#markdown-preview h5,
+#markdown-preview h6 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+#markdown-preview h1 {
+    font-size: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3rem;
+}
+
+#markdown-preview h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3rem;
+}
+
+#markdown-preview h3 {
+    font-size: 1.25rem;
+}
+
+#markdown-preview p {
+    margin-bottom: 1rem;
+}
+
+#markdown-preview ul,
+#markdown-preview ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+#markdown-preview li {
+    margin-bottom: 0.25rem;
+}
+
+#markdown-preview blockquote {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #ddd;
+    color: #666;
+}
+
+#markdown-preview pre {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    position: relative;
+}
+
+#markdown-preview code {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.875rem;
+}
+
+#markdown-preview pre code {
+    background-color: transparent;
+    padding: 0;
+    display: block;
+}
+
+#markdown-preview a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#markdown-preview a:hover {
+    text-decoration: underline;
+}
+
+#markdown-preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+#markdown-preview hr {
+    height: 1px;
+    background-color: #ddd;
+    border: none;
+    margin: 1.5rem 0;
+}
+
+.language-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ddd;
+    color: #333;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-bottom-left-radius: 4px;
+}
+
+.code-block {
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.placeholder {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Markdown Cheat Sheet */
+.markdown-help {
+    background-color: #f7f9fc;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .help-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .help-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.help-item h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.help-item pre {
+    background-color: #f0f0f0;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.813rem;
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
