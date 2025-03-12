@@ -1,4 +1,20 @@
+# Allow all crawlers complete access
 User-agent: *
 Allow: /
 
+# Specify the sitemap location
 Sitemap: https://toolnook.dev/sitemap.xml
+
+# Specify the primary pages for indexing
+Allow: /index.html
+Allow: /tools/svg-to-png/
+Allow: /tools/color-converter/
+Allow: /privacy.html
+
+# Ad-related file
+Allow: /ads.txt
+
+# Disallow potential duplicate content
+Disallow: /DEPLOYMENT.md
+Disallow: /VERCEL-TROUBLESHOOTING.md
+Disallow: /README.md

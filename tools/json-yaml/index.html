@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to YAML Converter - Convert JSON to YAML and vice versa | ToolNook.dev</title>
+    <meta name="description" content="Free online tool to convert between JSON and YAML formats instantly. Perfect for configuration files, API docs, and data interchange formats.">
+    <meta name="keywords" content="json to yaml, yaml to json, json converter, yaml converter, json yaml online, config file converter">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free JSON/YAML Converter Online">
+    <meta property="og:description" content="Convert between JSON and YAML data formats instantly. No signup required, works in your browser!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/tools/json-yaml/">
+    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <link rel="canonical" href="https://toolnook.dev/tools/json-yaml/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
+     crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "JSON to YAML Converter",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Convert between JSON and YAML formats. Perfect for configuration files and data interchange.",
+      "url": "https://toolnook.dev/tools/json-yaml/",
+      "featureList": [
+        "JSON to YAML conversion",
+        "YAML to JSON conversion", 
+        "Format validation",
+        "Syntax highlighting",
+        "Copy to clipboard functionality"
+      ],
+      "keywords": "json to yaml, yaml to json, convert json, convert yaml, configuration file conversion"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>JSON ↔ YAML Converter</h2>
+            <p>Convert between JSON and YAML formats. Perfect for configuration files, API specifications, and data exchange formats.</p>
+        </div>
+        
+        <!-- Ad banner below header -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="3456789012"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="converter-container">
+            <div class="input-controls">
+                <div class="format-selector">
+                    <label for="input-format">Input Format:</label>
+                    <div class="button-group">
+                        <button id="json-input-btn" class="format-btn active" data-format="json">JSON</button>
+                        <button id="yaml-input-btn" class="format-btn" data-format="yaml">YAML</button>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="clear-btn" class="btn btn-outline">Clear</button>
+                    <button id="sample-btn" class="btn btn-outline">Load Sample</button>
+                    <button id="paste-btn" class="btn btn-outline">Paste</button>
+                </div>
+            </div>
+            
+            <div class="editor-container">
+                <div id="input-container" class="editor-panel">
+                    <h3>Input</h3>
+                    <textarea id="input-area" placeholder="Paste your JSON or YAML here..."></textarea>
+                </div>
+                
+                <div class="converter-controls">
+                    <button id="convert-btn" class="btn">Convert &rarr;</button>
+                    <div id="status-message"></div>
+                </div>
+                
+                <div id="output-container" class="editor-panel">
+                    <h3>Output</h3>
+                    <div class="output-header">
+                        <div class="format-label" id="output-format-label">YAML</div>
+                        <button id="copy-btn" class="btn btn-small">Copy</button>
+                    </div>
+                    <textarea id="output-area" readonly></textarea>
+                </div>
+            </div>
+            
+            <div class="options-panel">
+                <h3>Options</h3>
+                <div class="option-group">
+                    <label for="indent-size">Indentation:</label>
+                    <select id="indent-size">
+                        <option value="2">2 spaces</option>
+                        <option value="4">4 spaces</option>
+                        <option value="tab">Tab</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label for="json-options">JSON Options:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="pretty-json" checked>
+                        <label for="pretty-json">Pretty print</label>
+                    </div>
+                </div>
+                <div class="option-group">
+                    <label for="yaml-options">YAML Options:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="use-quotes" checked>
+                        <label for="use-quotes">Quote strings when needed</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="flow-style">
+                        <label for="flow-style">Use flow style</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-panel">
+                <div class="info-item">
+                    <h4>About JSON</h4>
+                    <p>JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate.</p>
+                </div>
+                <div class="info-item">
+                    <h4>About YAML</h4>
+                    <p>YAML (YAML Ain't Markup Language) is a human-friendly data serialization standard that can be used for all programming languages. It is commonly used for configuration files.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Common Uses</h4>
+                    <ul>
+                        <li>Converting between configuration file formats</li>
+                        <li>API response formatting</li>
+                        <li>Data interchange between systems</li>
+                        <li>Database exports/imports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad banner above footer -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="7654321098"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use | <a href="/privacy.html" style="color:white;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

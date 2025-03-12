@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToolNook.dev - Handy Online Tools</title>
-    <meta name="description" content="A collection of free, useful micro-tools for developers, designers, and everyday tasks.">
+    <title>ToolNook.dev - Free Online Tools for SVG Conversion, Color Formats & More</title>
+    <meta name="description" content="Free online tools to convert SVG to PNG/JPEG/WebP, transform color formats (HEX, RGB, HSL), and more. No login required, works instantly in your browser.">
+    <meta name="keywords" content="online tools, svg converter, color converter, free tools, web tools, developer tools, design tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free Online Tools for Developers & Designers">
+    <meta property="og:description" content="Convert SVG files, transform color formats, and access other free tools directly in your browser - no signup required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/">
+    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <link rel="canonical" href="https://toolnook.dev/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://toolnook.dev/common/css/main.css">
     <script src="https://toolnook.dev/common/js/main.js" defer></script>
@@ -14,6 +22,22 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
      crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ToolNook.dev",
+      "url": "https://toolnook.dev/",
+      "description": "Free online tools to convert SVG to PNG/JPEG/WebP, transform color formats (HEX, RGB, HSL), and more.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://toolnook.dev/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -37,21 +61,65 @@
             </script>
         </div>
 
-        <section class="tools-grid">
-            <h2>Available Tools</h2>
-            <div id="tools-container">
-                <!-- Tools will be inserted here dynamically -->
-                <div class="tool-card" data-tool-id="svg-to-png">
+        <section class="tools-section">
+            <div class="category-nav">
+                <h2>Tool Categories</h2>
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">All Tools</button>
+                    <button class="category-btn" data-category="design">Design Tools</button>
+                    <button class="category-btn" data-category="developer">Developer Tools</button>
+                    <button class="category-btn" data-category="conversion">Conversion Tools</button>
+                </div>
+            </div>
+
+            <div id="tools-container" class="tools-grid">
+                <!-- Design Tools -->
+                <div class="tool-card" data-tool-id="svg-to-png" data-category="design">
+                    <div class="tool-card-tag">Design</div>
                     <h3>SVG Converter</h3>
                     <p>Convert SVG files to PNG, JPEG, WebP and other web formats with customizable settings</p>
                     <a href="/tools/svg-to-png/" class="btn">Open Tool</a>
                 </div>
-                <div class="tool-card" data-tool-id="color-converter">
+                <div class="tool-card" data-tool-id="color-converter" data-category="design">
+                    <div class="tool-card-tag">Design</div>
                     <h3>Color Converter</h3>
                     <p>Convert between different color formats: HEX, RGB, HSL, and more</p>
                     <a href="/tools/color-converter/" class="btn">Open Tool</a>
                 </div>
-                <!-- Add more tools here manually or dynamically -->
+
+                <!-- Developer Tools -->
+                <div class="tool-card" data-tool-id="json-yaml" data-category="developer">
+                    <div class="tool-card-tag">Developer</div>
+                    <h3>JSON ↔ YAML Converter</h3>
+                    <p>Convert between JSON and YAML formats. Perfect for configuration files and data interchange</p>
+                    <a href="/tools/json-yaml/" class="btn">Open Tool</a>
+                </div>
+                <div class="tool-card" data-tool-id="base64" data-category="developer">
+                    <div class="tool-card-tag">Developer</div>
+                    <h3>Base64 Encoder/Decoder</h3>
+                    <p>Encode text to Base64 or decode Base64 strings back to plain text</p>
+                    <a href="/tools/base64/" class="btn">Open Tool</a>
+                </div>
+                <div class="tool-card" data-tool-id="regex-tester" data-category="developer">
+                    <div class="tool-card-tag">Developer</div>
+                    <h3>Regex Tester</h3>
+                    <p>Test and debug regular expressions in real-time with match highlighting</p>
+                    <a href="/tools/regex-tester/" class="btn">Open Tool</a>
+                </div>
+                
+                <!-- Conversion Tools -->
+                <div class="tool-card" data-tool-id="timestamp-converter" data-category="conversion">
+                    <div class="tool-card-tag">Conversion</div>
+                    <h3>Unix Timestamp Converter</h3>
+                    <p>Convert between Unix timestamps and human-readable dates and times</p>
+                    <a href="/tools/timestamp-converter/" class="btn">Open Tool</a>
+                </div>
+                <div class="tool-card" data-tool-id="hash-generator" data-category="conversion">
+                    <div class="tool-card-tag">Conversion</div>
+                    <h3>Hash Generator</h3>
+                    <p>Generate MD5, SHA-256, SHA-512 and other cryptographic hashes</p>
+                    <a href="/tools/hash-generator/" class="btn">Open Tool</a>
+                </div>
             </div>
         </section>
 

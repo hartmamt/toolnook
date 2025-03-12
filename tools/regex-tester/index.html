@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression Tester - Test, Debug and Validate Regex Online | ToolNook.dev</title>
+    <meta name="description" content="Free online regular expression tester with real-time matching and highlighting. Test, debug, and improve your regex patterns instantly.">
+    <meta name="keywords" content="regex tester, regex testing tool, regex validator, regular expression, regex debugger, regex pattern tester">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Online Regular Expression Tester and Debugger">
+    <meta property="og:description" content="Test and debug your regular expressions in real-time with our free online tool. Features match highlighting and detailed explanations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/tools/regex-tester/">
+    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <link rel="canonical" href="https://toolnook.dev/tools/regex-tester/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
+     crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Regular Expression Tester",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Test, debug, and validate regular expressions with real-time highlighting and detailed explanations.",
+      "url": "https://toolnook.dev/tools/regex-tester/",
+      "featureList": [
+        "Real-time regex pattern testing",
+        "Match highlighting",
+        "Multiple regex flags support",
+        "Group capture information",
+        "Common pattern examples"
+      ],
+      "keywords": "regex tester, regular expression, pattern matching, regex validator, regex debugger"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Regular Expression Tester</h2>
+            <p>Test and debug your regular expressions with real-time highlighting and detailed results.</p>
+        </div>
+        
+        <!-- Ad banner below header -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="3456789012"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="regex-container">
+            <div class="editor-section">
+                <div class="regex-input-container">
+                    <div class="input-header">
+                        <label for="regex-pattern">Regular Expression Pattern:</label>
+                        <div class="flags-container">
+                            <div class="flag-option">
+                                <input type="checkbox" id="flag-global" checked>
+                                <label for="flag-global">g <span class="flag-tooltip">Global (find all matches)</span></label>
+                            </div>
+                            <div class="flag-option">
+                                <input type="checkbox" id="flag-case-insensitive">
+                                <label for="flag-case-insensitive">i <span class="flag-tooltip">Case insensitive</span></label>
+                            </div>
+                            <div class="flag-option">
+                                <input type="checkbox" id="flag-multiline">
+                                <label for="flag-multiline">m <span class="flag-tooltip">Multiline (^ and $ match line start/end)</span></label>
+                            </div>
+                            <div class="flag-option">
+                                <input type="checkbox" id="flag-dotall">
+                                <label for="flag-dotall">s <span class="flag-tooltip">Dot matches newlines</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-with-buttons">
+                        <input type="text" id="regex-pattern" placeholder="Enter regular expression pattern (e.g. \b\w+\b)">
+                        <button id="clear-pattern-btn" class="btn btn-small btn-outline">Clear</button>
+                    </div>
+                    <div id="regex-error" class="error-message"></div>
+                </div>
+                
+                <div class="text-input-container">
+                    <div class="input-header">
+                        <label for="test-string">Test String:</label>
+                        <div class="action-buttons">
+                            <button id="clear-text-btn" class="btn btn-small btn-outline">Clear</button>
+                            <button id="sample-btn" class="btn btn-small btn-outline">Load Sample</button>
+                        </div>
+                    </div>
+                    <textarea id="test-string" placeholder="Enter text to test the regular expression against"></textarea>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <h3>Match Results</h3>
+                <div class="results-container">
+                    <div class="highlighted-text" id="highlighted-text">
+                        <p class="placeholder">Matches will be highlighted here</p>
+                    </div>
+                    
+                    <div class="match-info">
+                        <div class="match-count" id="match-count">0 matches found</div>
+                        <div class="capture-groups" id="capture-groups"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cheatsheet-section">
+                <h3>Regex Cheatsheet</h3>
+                <div class="cheatsheet-container">
+                    <div class="cheatsheet-column">
+                        <h4>Character Classes</h4>
+                        <table class="cheatsheet-table">
+                            <tr><td><code>.</code></td><td>Any character except newline</td></tr>
+                            <tr><td><code>\w</code></td><td>Word character [a-zA-Z0-9_]</td></tr>
+                            <tr><td><code>\d</code></td><td>Digit [0-9]</td></tr>
+                            <tr><td><code>\s</code></td><td>Whitespace</td></tr>
+                            <tr><td><code>\W</code></td><td>Not word character</td></tr>
+                            <tr><td><code>\D</code></td><td>Not digit</td></tr>
+                            <tr><td><code>\S</code></td><td>Not whitespace</td></tr>
+                            <tr><td><code>[abc]</code></td><td>Any of a, b, or c</td></tr>
+                            <tr><td><code>[^abc]</code></td><td>Not a, b, or c</td></tr>
+                            <tr><td><code>[a-z]</code></td><td>Character between a & z</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div class="cheatsheet-column">
+                        <h4>Anchors & Boundaries</h4>
+                        <table class="cheatsheet-table">
+                            <tr><td><code>^</code></td><td>Start of string/line</td></tr>
+                            <tr><td><code>$</code></td><td>End of string/line</td></tr>
+                            <tr><td><code>\b</code></td><td>Word boundary</td></tr>
+                            <tr><td><code>\B</code></td><td>Not word boundary</td></tr>
+                        </table>
+                        
+                        <h4>Quantifiers</h4>
+                        <table class="cheatsheet-table">
+                            <tr><td><code>*</code></td><td>0 or more</td></tr>
+                            <tr><td><code>+</code></td><td>1 or more</td></tr>
+                            <tr><td><code>?</code></td><td>0 or 1</td></tr>
+                            <tr><td><code>{3}</code></td><td>Exactly 3</td></tr>
+                            <tr><td><code>{3,}</code></td><td>3 or more</td></tr>
+                            <tr><td><code>{1,3}</code></td><td>Between 1 and 3</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div class="cheatsheet-column">
+                        <h4>Groups & Alternation</h4>
+                        <table class="cheatsheet-table">
+                            <tr><td><code>(abc)</code></td><td>Capture group</td></tr>
+                            <tr><td><code>(?:abc)</code></td><td>Non-capturing group</td></tr>
+                            <tr><td><code>|</code></td><td>Alternation (or)</td></tr>
+                        </table>
+                        
+                        <h4>Common Examples</h4>
+                        <div class="examples-container">
+                            <span class="example" data-pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">Email</span>
+                            <span class="example" data-pattern="^(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/\S*)?$">URL</span>
+                            <span class="example" data-pattern="\b\d{3}[-.]?\d{3}[-.]?\d{4}\b">Phone Number</span>
+                            <span class="example" data-pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$">Password</span>
+                            <span class="example" data-pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}">IP Address</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad banner above footer -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="7654321098"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use | <a href="/privacy.html" style="color:white;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

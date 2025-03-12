@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator - Create MD5, SHA-256, SHA-512 and other Hashes | ToolNook.dev</title>
+    <meta name="description" content="Free online hash generator tool. Create MD5, SHA-1, SHA-256, SHA-512 and more cryptographic hashes instantly. Perfect for checksums, password storage, and data verification.">
+    <meta name="keywords" content="hash generator, md5 generator, sha256, sha512, hash calculator, password hash, online hash tool">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free Online Hash Generator Tool">
+    <meta property="og:description" content="Create cryptographic hashes (MD5, SHA-256, SHA-512, and more) instantly. Perfect for checksums and data verification.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/tools/hash-generator/">
+    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <link rel="canonical" href="https://toolnook.dev/tools/hash-generator/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
+     crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Hash Generator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Generate MD5, SHA-256, SHA-512, and other cryptographic hash values instantly.",
+      "url": "https://toolnook.dev/tools/hash-generator/",
+      "featureList": [
+        "Multiple hash algorithm support",
+        "Text and file hashing",
+        "Instant computation",
+        "Easy result copying",
+        "Hash value comparisons"
+      ],
+      "keywords": "hash generator, md5, sha256, sha512, hash calculator, cryptographic hash"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Hash Generator</h2>
+            <p>Generate cryptographic hash values from text or files using various algorithms (MD5, SHA-256, SHA-512, and more).</p>
+        </div>
+        
+        <!-- Ad banner below header -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="3456789012"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="hash-container">
+            <div class="mode-selector">
+                <button id="text-mode-btn" class="mode-btn active" data-mode="text">Text Input</button>
+                <button id="file-mode-btn" class="mode-btn" data-mode="file">File Upload</button>
+                <button id="compare-mode-btn" class="mode-btn" data-mode="compare">Compare Hashes</button>
+            </div>
+            
+            <!-- Text Input Mode -->
+            <div id="text-mode" class="mode-panel active">
+                <div class="input-container">
+                    <label for="text-input">Enter text to hash:</label>
+                    <textarea id="text-input" placeholder="Type or paste text here..."></textarea>
+                    <div class="input-actions">
+                        <button id="clear-text-btn" class="btn btn-small btn-outline">Clear</button>
+                        <button id="paste-btn" class="btn btn-small btn-outline">Paste</button>
+                        <button id="sample-btn" class="btn btn-small btn-outline">Sample</button>
+                    </div>
+                </div>
+                
+                <div class="algorithm-selector">
+                    <h3>Select Hash Algorithms:</h3>
+                    <div class="algorithm-grid">
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="md5" checked>
+                            <label for="md5">MD5</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="sha1" checked>
+                            <label for="sha1">SHA-1</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="sha256" checked>
+                            <label for="sha256">SHA-256</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="sha384">
+                            <label for="sha384">SHA-384</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="sha512" checked>
+                            <label for="sha512">SHA-512</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="sha3-256">
+                            <label for="sha3-256">SHA3-256</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="sha3-512">
+                            <label for="sha3-512">SHA3-512</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="ripemd160">
+                            <label for="ripemd160">RIPEMD-160</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hash-actions">
+                    <div class="case-option">
+                        <input type="checkbox" id="uppercase">
+                        <label for="uppercase">Uppercase</label>
+                    </div>
+                    <button id="generate-btn" class="btn">Generate Hashes</button>
+                </div>
+                
+                <div id="hash-results" class="hash-results">
+                    <div class="placeholder">Hash results will appear here</div>
+                </div>
+            </div>
+            
+            <!-- File Upload Mode -->
+            <div id="file-mode" class="mode-panel">
+                <div class="file-upload-container">
+                    <div class="file-upload-box" id="file-upload-area">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p class="upload-text">Drag & drop your file here<br>or click to browse</p>
+                        <p class="file-name" id="file-name"></p>
+                        <input type="file" id="file-input" class="file-input" />
+                    </div>
+                    
+                    <div class="file-info" id="file-info">
+                        <div class="info-row">
+                            <span class="info-label">File Size:</span>
+                            <span id="file-size">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Last Modified:</span>
+                            <span id="file-modified">-</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="algorithm-selector">
+                    <h3>Select Hash Algorithms:</h3>
+                    <div class="algorithm-grid">
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="file-md5" checked>
+                            <label for="file-md5">MD5</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="file-sha1" checked>
+                            <label for="file-sha1">SHA-1</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="file-sha256" checked>
+                            <label for="file-sha256">SHA-256</label>
+                        </div>
+                        <div class="algorithm-checkbox">
+                            <input type="checkbox" id="file-sha512">
+                            <label for="file-sha512">SHA-512</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hash-actions">
+                    <div class="case-option">
+                        <input type="checkbox" id="file-uppercase">
+                        <label for="file-uppercase">Uppercase</label>
+                    </div>
+                    <button id="hash-file-btn" class="btn">Hash File</button>
+                </div>
+                
+                <div id="file-hash-results" class="hash-results">
+                    <div class="placeholder">File hash results will appear here</div>
+                </div>
+            </div>
+            
+            <!-- Hash Comparison Mode -->
+            <div id="compare-mode" class="mode-panel">
+                <div class="comparison-inputs">
+                    <div class="input-group">
+                        <label for="hash1">First Hash:</label>
+                        <input type="text" id="hash1" placeholder="Enter or paste hash value">
+                    </div>
+                    <div class="input-group">
+                        <label for="hash2">Second Hash:</label>
+                        <input type="text" id="hash2" placeholder="Enter or paste hash value">
+                    </div>
+                </div>
+                
+                <div class="hash-actions">
+                    <button id="compare-btn" class="btn">Compare Hashes</button>
+                </div>
+                
+                <div id="comparison-result" class="comparison-result">
+                    <div class="placeholder">Comparison result will appear here</div>
+                </div>
+            </div>
+            
+            <div class="info-panel">
+                <div class="info-item">
+                    <h4>What are Hash Functions?</h4>
+                    <p>Hash functions take input data of any size and produce a fixed-size string of bytes, typically a digest that looks random. The same input will always generate the same hash value, but even a small change to the input will produce a completely different hash.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Common Uses</h4>
+                    <ul>
+                        <li>File integrity verification</li>
+                        <li>Password storage (with proper salting)</li>
+                        <li>Digital signatures</li>
+                        <li>Data deduplication</li>
+                        <li>Checksums for downloads</li>
+                    </ul>
+                </div>
+                <div class="info-item">
+                    <h4>Security Notes</h4>
+                    <p>Not all hash functions are suitable for security purposes. MD5 and SHA-1 are now considered cryptographically broken. For security-critical applications, use SHA-256 or newer algorithms.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad banner above footer -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="7654321098"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use | <a href="/privacy.html" style="color:white;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
