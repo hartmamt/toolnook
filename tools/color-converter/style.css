@@ -103,6 +103,90 @@ select {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Related Tools Section */
+.related-tools {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.related-tools h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #343541;
+    font-size: 1.25rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.related-tools h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.related-tool-card {
+    padding: 1.25rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.related-tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.related-tool-card h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.related-tool-card p {
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.btn-related {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-related:hover {
+    background-color: var(--secondary-color);
+}
+
 @media (max-width: 600px) {
     .result-item {
         flex-direction: column;
@@ -127,5 +211,9 @@ select {
         align-self: stretch;
         text-align: center;
         padding: 0.6rem;
+    }
+    
+    .related-tools-grid {
+        grid-template-columns: 1fr;
     }
 }
