@@ -172,6 +172,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #222;
 }
 
 .btn-small {
@@ -218,7 +219,8 @@ h3 {
 }
 
 .layer-title {
-    font-weight: 500;
+    font-weight: 600;
+    color: #333;
 }
 
 .layer-actions {
@@ -267,6 +269,8 @@ h3 {
 .control-row label {
     width: 80px;
     font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
 }
 
 .control-row input[type="range"] {
@@ -292,7 +296,8 @@ h3 {
 .unit {
     margin-left: 5px;
     font-size: 0.9rem;
-    color: #666;
+    color: #444;
+    font-weight: 500;
 }
 
 .opacity {
@@ -302,7 +307,8 @@ h3 {
 
 .opacity-value {
     font-size: 0.9rem;
-    color: #666;
+    color: #444;
+    font-weight: 500;
     width: 35px;
 }
 
@@ -384,6 +390,11 @@ input[type="color"] {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.size-input span {
+    color: #333;
+    font-weight: 500;
 }
 
 .size-input input {
