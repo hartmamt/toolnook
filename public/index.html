@@ -7,11 +7,35 @@
     <meta name="description" content="Free online tools to convert SVG to PNG/JPEG/WebP, transform color formats (HEX, RGB, HSL), and more. No login required, works instantly in your browser.">
     <meta name="keywords" content="online tools, svg converter, color converter, free tools, web tools, developer tools, design tools">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Free Online Tools for Developers & Designers">
-    <meta property="og:description" content="Convert SVG files, transform color formats, and access other free tools directly in your browser - no signup required.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="ToolNook.dev - Free Online Tools for Developers & Designers">
+    <meta property="og:description" content="Convert SVG to PNG, transform color formats, generate CSS gradients, and access 15+ other free tools directly in your browser. No signup required.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://toolnook.dev/">
-    <meta property="og:image" content="https://toolnook.dev/favicon.svg">
+    <!-- For better compatibility across platforms, consider creating a PNG version of this image -->
+    <meta property="og:image" content="https://toolnook.dev/assets/social/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ToolNook.dev">
+    
+    <!-- Twitter / X.com -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ToolNook.dev - Free Online Tools for Developers & Designers">
+    <meta name="twitter:description" content="Convert SVG to PNG, transform color formats, generate CSS gradients, and access 15+ other free tools directly in your browser. No signup required.">
+    <meta name="twitter:image" content="https://toolnook.dev/assets/social/social-preview.png">
+    
+    <!-- Additional tags for other platforms -->
+    <meta itemprop="name" content="ToolNook.dev">
+    <meta itemprop="description" content="Free online tools for web developers and designers">
+    <meta itemprop="image" content="https://toolnook.dev/assets/social/social-preview.png">
+    
+    <!-- Pinterest -->
+    <meta name="pinterest:title" content="ToolNook.dev - Free Online Developer Tools">
+    <meta name="pinterest:description" content="Free online tools for developers and designers - SVG converter, color tools, CSS generators, and more!">
+    <meta name="pinterest:image" content="https://toolnook.dev/assets/social/social-preview.png">
+    
+    <!-- WhatsApp/Facebook Messenger Preview -->
+    <meta property="og:image:alt" content="ToolNook.dev - Free Online Tools Collection">
     <link rel="canonical" href="https://toolnook.dev/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://toolnook.dev/common/css/main.css">
@@ -22,6 +46,16 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
      crossorigin="anonymous"></script>
+     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDVTX9Q82T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XDVTX9Q82T');
+    </script>
      
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -41,6 +75,7 @@
 </head>
 <body>
     <header>
+        <img src="/toolnook.png" alt="Header background pattern" class="header-image">
         <div class="container">
             <h1>ToolNook.dev</h1>
             <p>A collection of handy micro-tools for everyday tasks</p>
@@ -127,6 +162,12 @@
                     <h3>Base64 Encoder/Decoder</h3>
                     <p>Encode text to Base64 or decode Base64 strings back to plain text</p>
                     <a href="/tools/base64/" class="btn">Open Tool</a>
+                </div>
+                <div class="tool-card" data-tool-id="item-deduplicator" data-category="developer">
+                    <div class="tool-card-tag">Developer</div>
+                    <h3>Item Deduplicator</h3>
+                    <p>Remove duplicate items from lists, text, or data quickly and efficiently</p>
+                    <a href="/tools/item-deduplicator/" class="btn">Open Tool</a>
                 </div>
                 <div class="tool-card" data-tool-id="regex-tester" data-category="developer">
                     <div class="tool-card-tag">Developer</div>

@@ -1,11 +1,27 @@
-/* Main CSS for ToolNook.dev */
+/* Modern Main CSS for ToolNook.dev */
 :root {
-    --primary-color: #3a86ff;
-    --secondary-color: #8338ec;
+    --primary-color: #10a37f; /* ChatGPT green */
+    --primary-light: rgba(16, 163, 127, 0.1);
+    --secondary-color: #6e7bf2; /* Soft purple-blue */
     --accent-color: #ff006e;
-    --light-color: #f8f9fa;
-    --dark-color: #212529;
+    --light-color: #f7f7f8;
+    --dark-color: #343541;
+    --text-color: #374151;
+    --text-light: #6b7280;
+    --border-color: #e5e7eb;
+    --card-color: #ffffff;
+    --hover-color: #f9fafb;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -13,46 +29,92 @@
     padding: 0;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.6;
-    color: var(--dark-color);
-    background-color: #f5f7f9;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    width: 90%;
+    width: 92%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 1rem;
 }
 
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-color: var(--primary-color);
     color: white;
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    z-index: 1;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    max-width: 800px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.15rem;
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 main {
     padding: 2rem 0;
+    min-height: calc(100vh - 280px);
 }
 
 .tools-section h2 {
     margin-bottom: 1.5rem;
     text-align: center;
     color: var(--dark-color);
+    font-weight: 600;
+    font-size: 1.6rem;
 }
 
 /* Category Navigation */
 .category-nav {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .category-buttons {
@@ -64,60 +126,71 @@ main {
 }
 
 .category-btn {
-    background-color: #f1f3f6;
-    border: none;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 2rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+    color: var(--text-light);
 }
 
 .category-btn:hover {
-    background-color: #e1e5eb;
+    background-color: var(--hover-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .category-btn.active {
     background-color: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
 }
 
 #tools-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
 }
 
 .tool-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
+    background-color: var(--card-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    padding: 1.75rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .tool-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
 }
 
 .tool-card-tag {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: rgba(58, 134, 255, 0.1);
+    background-color: var(--primary-light);
     color: var(--primary-color);
     font-size: 0.7rem;
     font-weight: 600;
-    padding: 0.3rem 0.6rem;
-    border-bottom-left-radius: 8px;
+    padding: 0.35rem 0.75rem;
+    border-bottom-left-radius: var(--radius-md);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .tool-card[data-category="design"] .tool-card-tag {
-    background-color: rgba(131, 56, 236, 0.1);
+    background-color: rgba(110, 123, 242, 0.1);
     color: var(--secondary-color);
 }
 
@@ -131,50 +204,67 @@ main {
     color: #20c997;
 }
 
+.tool-card[data-category="math"] .tool-card-tag {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+}
+
 .tool-card h3 {
-    color: var(--primary-color);
+    color: var(--dark-color);
     margin-bottom: 0.75rem;
     padding-right: 1rem;
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .tool-card p {
-    margin-bottom: 1.25rem;
-    color: #666;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    flex-grow: 1;
+    font-size: 0.95rem;
 }
 
 .btn {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-align: center;
 }
 
 .btn:hover {
-    background-color: var(--secondary-color);
+    background-color: #0d8c6c;
+    box-shadow: var(--shadow-sm);
 }
 
 footer {
-    background-color: var(--dark-color);
-    color: var(--light-color);
+    background-color: var(--card-color);
+    color: var(--text-light);
     text-align: center;
     padding: 1.5rem 0;
-    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
 }
 
 /* Ad containers */
 .ad-container {
-    margin: 1.5rem auto;
+    margin: 2rem auto;
     text-align: center;
     overflow: hidden;
     width: 100%;
     max-width: 100%;
     min-height: 90px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
+    background-color: var(--card-color);
+    border-radius: var(--radius-md);
     padding: 0.5rem;
+    border: 1px solid var(--border-color);
 }
 
 .ad-horizontal {
@@ -185,24 +275,122 @@ footer {
     min-height: 280px;
 }
 
-@media (max-width: 768px) {
-    .ad-container {
-        min-height: 50px;
-    }
+/* Tool-specific styling */
+.tool-header {
+    margin-bottom: 2rem;
 }
 
-/* Tool-specific styling */
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
 .tool-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--card-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
     padding: 2rem;
     margin-bottom: 2rem;
 }
 
 .tool-container h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.tool-container h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.input-section, 
+.output-section {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 1.05rem;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    transition: border-color 0.2s ease;
+    background-color: var(--card-color);
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+/* Improve dropdown text readability */
+select {
+    font-weight: 600;
+    color: var(--dark-color);
+    -webkit-appearance: none;  /* Remove default styling in Safari/Chrome */
+    -moz-appearance: none;     /* Remove default styling in Firefox */
+    appearance: none;          /* Standard property */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23343541' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 1.2rem auto;
+    padding-right: 2rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+#process-btn {
+    margin-top: 1.25rem;
+}
+
+#result {
+    background-color: var(--light-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    min-height: 120px;
+    border: 1px solid var(--border-color);
+}
+
+.placeholder {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.error {
+    color: #dc2626;
+    font-weight: 500;
 }
 
 /* Responsive adjustments */
@@ -211,7 +399,40 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    header {
+        padding: 2.5rem 0;
+    }
+    
+    header .container {
+        padding: 1rem;
+        max-width: 90%;
+    }
+    
     header h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    
+    .tool-container {
+        padding: 1.5rem;
+    }
+    
+    .category-buttons {
+        gap: 0.5rem;
+    }
+    
+    .category-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .header-image {
+        width: 200%;
+        left: -50%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #tools-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

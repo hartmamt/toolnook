@@ -1,5 +1,5 @@
 /**
- * Physics Calculator Tool
+ * Modern Physics Calculator Tool
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,35 +14,115 @@ document.addEventListener('DOMContentLoaded', () => {
     const solutionSteps = document.getElementById('solution-steps');
     const stepsContent = document.getElementById('steps-content');
 
-    // Add event listener to the process button
+    // Add event listeners
     processBtn.addEventListener('click', processInput);
+    
+    // Add Enter key support for form fields
+    [initialVelocity, initialHeight, angle].forEach(input => {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                processInput();
+            }
+        });
+    });
+    
+    // Add conditional field visibility based on calculation type
+    calcType.addEventListener('change', updateFormFields);
+    
+    // Initial field setup
+    updateFormFields();
+    
+    // Auto-generate example values based on calculation type
+    calcType.addEventListener('change', setExampleValues);
+    
+    // Set default example values on load
+    setExampleValues();
+
+    /**
+     * Update form fields based on the selected calculation type
+     */
+    function updateFormFields() {
+        const selectedCalcType = calcType.value;
+        
+        // Show/hide angle field based on calculation type
+        if (selectedCalcType === 'time-to-ground' || selectedCalcType === 'max-height') {
+            // For time-to-ground and max-height, default to vertical motion (90°)
+            angle.value = 90;
+            angle.parentElement.classList.add('field-highlight');
+            setTimeout(() => {
+                angle.parentElement.classList.remove('field-highlight');
+            }, 1500);
+        } else {
+            // For range, set a default angle of 45° (optimal for range)
+            angle.value = 45;
+            angle.parentElement.classList.add('field-highlight');
+            setTimeout(() => {
+                angle.parentElement.classList.remove('field-highlight');
+            }, 1500);
+        }
+    }
+    
+    /**
+     * Set example values based on the selected calculation type
+     */
+    function setExampleValues() {
+        const selectedCalcType = calcType.value;
+        
+        // Example problem values
+        if (selectedCalcType === 'time-to-ground') {
+            initialVelocity.placeholder = "e.g., 16 (for our example problem)";
+            initialHeight.placeholder = "e.g., 5 (for our example problem)";
+        } else if (selectedCalcType === 'max-height') {
+            initialVelocity.placeholder = "e.g., 20";
+            initialHeight.placeholder = "e.g., 0";
+        } else {
+            initialVelocity.placeholder = "e.g., 30";
+            initialHeight.placeholder = "e.g., 1.5";
+        }
+    }
 
     /**
      * Process the user input and calculate physics result
      */
     function processInput() {
-        // Get input values
-        const calcTypeValue = calcType.value;
-        const v0 = parseFloat(initialVelocity.value);
-        const h0 = parseFloat(initialHeight.value);
-        const angleValue = parseFloat(angle.value);
-        const unitsValue = units.value;
+        // Show loading state
+        resultArea.innerHTML = `
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Calculating...</p>
+            </div>
+        `;
+        solutionSteps.classList.add('hidden');
         
-        // Validate input
-        if (isNaN(v0) || isNaN(h0) || isNaN(angleValue)) {
-            showError('Please enter valid numerical values for all fields');
-            return;
-        }
-        
-        try {
-            // Calculate based on the selected calculation type
-            const result = calculatePhysicsProblem(calcTypeValue, v0, h0, angleValue, unitsValue);
+        // Simulate calculation time for better UX
+        setTimeout(() => {
+            // Get input values
+            const calcTypeValue = calcType.value;
+            const v0 = parseFloat(initialVelocity.value);
+            const h0 = parseFloat(initialHeight.value);
+            const angleValue = parseFloat(angle.value);
+            const unitsValue = units.value;
             
-            // Display the result and solution steps
-            displayResult(result);
-        } catch (error) {
-            showError(`An error occurred: ${error.message}`);
-        }
+            // Validate input
+            if (isNaN(v0) || isNaN(h0) || isNaN(angleValue)) {
+                showError('Please enter valid numerical values for all fields');
+                return;
+            }
+            
+            try {
+                // Calculate based on the selected calculation type
+                const result = calculatePhysicsProblem(calcTypeValue, v0, h0, angleValue, unitsValue);
+                
+                // Display the result and solution steps
+                displayResult(result);
+                
+                // Add to calculation history
+                addToHistory(calcTypeValue, v0, h0, angleValue, unitsValue, result);
+            } catch (error) {
+                showError(`An error occurred: ${error.message}`);
+            }
+        }, 500); // Slight delay for better UX
     }
 
     /**
@@ -229,6 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show solution steps
         solutionSteps.classList.remove('hidden');
         stepsContent.innerHTML = result.steps.map(step => `<p>${step}</p>`).join('');
+        
+        // Smooth scroll to result
+        resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     /**
@@ -238,5 +321,38 @@ document.addEventListener('DOMContentLoaded', () => {
     function showError(message) {
         resultArea.innerHTML = `<p class="error">${message}</p>`;
         solutionSteps.classList.add('hidden');
+    }
+    
+    /**
+     * Add calculation to history (stored in local storage)
+     */
+    function addToHistory(calcType, v0, h0, angle, units, result) {
+        try {
+            // Get existing history or create new array
+            let history = JSON.parse(localStorage.getItem('physics_calculator_history')) || [];
+            
+            // Add new calculation to history
+            history.unshift({
+                date: new Date().toISOString(),
+                calcType,
+                v0,
+                h0,
+                angle,
+                units,
+                result: result.value,
+                resultUnit: result.unit
+            });
+            
+            // Limit history to 10 items
+            if (history.length > 10) {
+                history = history.slice(0, 10);
+            }
+            
+            // Save history
+            localStorage.setItem('physics_calculator_history', JSON.stringify(history));
+        } catch (e) {
+            // Silently fail if localStorage is not available
+            console.log('Could not save to history:', e);
+        }
     }
 });

@@ -1,99 +1,170 @@
-/* Physics Calculator CSS */
+/* Physics Calculator - Modern Style */
 
 .tool-header {
-    margin-bottom: 2rem;
-}
-
-.back-link {
-    display: inline-block;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.back-link:hover {
-    text-decoration: underline;
+    margin-bottom: 2.5rem;
 }
 
 .input-section,
 .output-section {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-#process-btn {
-    margin-top: 1rem;
-}
-
-#result {
-    background-color: #f7f9fc;
-    border-radius: 4px;
-    padding: 1rem;
-    min-height: 100px;
-}
-
-.placeholder {
-    color: #999;
-    font-style: italic;
-}
-
+/* Result styling */
 .result-value {
     font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
     color: var(--primary-color);
+    padding: 0.75rem 1rem;
+    background-color: var(--primary-light);
+    border-radius: var(--radius-md);
+    display: inline-block;
 }
 
 #solution-steps {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: #f0f5ff;
-    border-radius: 4px;
-    border-left: 4px solid var(--primary-color);
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
 }
 
 #solution-steps h4 {
     margin-top: 0;
-    color: var(--primary-color);
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 #steps-content p {
     margin: 0.5rem 0;
-    font-family: monospace;
+    font-family: var(--font-sans);
     white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Enhanced form field styling */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2310a37f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Button styling */
+#process-btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* Highlight important calculations */
+#steps-content p:nth-child(5n) {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Style for the final answer */
+#steps-content p:last-child {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Add dividers between calculation sections */
+#steps-content p:empty {
+    height: 0.75rem;
 }
 
 .hidden {
     display: none;
 }
 
-/* Improve display on small screens */
-@media (max-width: 600px) {
-    .input-section, .output-section {
-        padding: 0.5rem;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #solution-steps {
+        padding: 1rem;
     }
     
     #steps-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
+}
+
+/* Light grid background for result area */
+#result {
+    background-color: var(--light-color);
+    background-image: 
+      linear-gradient(rgba(220, 220, 225, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(220, 220, 225, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* ChatGPT-style container shadow and border */
+.tool-container {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* Material-style focus indicators */
+input:focus, select:focus {
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Loading indicator styles */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.loading p {
+    margin-top: 1rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--primary-light);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 0.8s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Field highlight effect */
+.field-highlight {
+    animation: highlight-pulse 1.5s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+    0% { background-color: transparent; }
+    30% { background-color: var(--primary-light); }
+    100% { background-color: transparent; }
 }
