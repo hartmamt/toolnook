@@ -1,17 +1,17 @@
 /* Unix Timestamp Converter Styles */
 
 .timestamp-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--card-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
     padding: 1.5rem;
     margin-bottom: 2rem;
 }
 
 /* Current Time Box */
 .current-time-box {
-    background-color: #f8f9fa;
-    border-radius: 6px;
+    background-color: var(--light-color);
+    border-radius: var(--radius-sm);
     padding: 1rem;
     margin-bottom: 1.5rem;
     display: flex;
@@ -34,6 +34,7 @@
 #current-date {
     font-size: 1.2rem;
     font-weight: 500;
+    color: var(--text-color); /* Use the main text color variable for better dark mode compatibility */
 }
 
 #current-time {
@@ -44,7 +45,7 @@
 
 .time-data {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light); /* Use the light text color variable for better dark mode compatibility */
 }
 
 /* Conversion Tabs */
@@ -61,7 +62,7 @@
     border-bottom: 2px solid transparent;
     cursor: pointer;
     font-weight: 500;
-    color: #666;
+    color: var(--text-light);
     transition: all 0.2s ease;
 }
 
@@ -126,7 +127,7 @@ select:focus {
 
 .help-text {
     font-size: 0.8rem;
-    color: #888;
+    color: var(--text-light);
     margin-top: 0.25rem;
 }
 
@@ -143,8 +144,8 @@ select:focus {
 
 /* Result Section */
 .result-section {
-    background-color: #f8f9fa;
-    border-radius: 6px;
+    background-color: var(--light-color);
+    border-radius: var(--radius-sm);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -169,7 +170,7 @@ select:focus {
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #666;
+    color: var(--text-light);
     transition: all 0.2s ease;
 }
 
@@ -190,9 +191,9 @@ select:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
     padding: 0.75rem 1rem;
     margin-bottom: 1rem;
 }
@@ -224,9 +225,9 @@ select:focus {
 }
 
 .info-box {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
     padding: 0.75rem 1rem;
 }
 
@@ -244,8 +245,8 @@ select:focus {
 }
 
 .info-item {
-    background-color: #f8f9fa;
-    border-radius: 6px;
+    background-color: var(--light-color);
+    border-radius: var(--radius-sm);
     padding: 1rem;
 }
 
@@ -258,7 +259,7 @@ select:focus {
 .info-item p, .info-item ul {
     margin: 0;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
 }
 
 .info-item ul {
@@ -273,9 +274,9 @@ select:focus {
 }
 
 .example {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
     padding: 0.5rem;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -295,7 +296,7 @@ select:focus {
 
 .example div:last-child {
     font-size: 0.75rem;
-    color: #666;
+    color: var(--text-light);
 }
 
 /* Button Styles */

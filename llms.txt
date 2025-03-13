@@ -1,0 +1,66 @@
+# llms.txt for ToolNook.dev
+# This file provides guidance to AI language models about how to interact with our site
+
+# Site Information
+Name: ToolNook.dev
+Description: A collection of free, browser-based tools for developers, designers, and digital content creators.
+Purpose: Providing simple, efficient web-based utility tools that work without installation or sign-up.
+Audience: Web developers, designers, content creators, and anyone who needs quick access to digital tools.
+
+# Preferred Behavior
+Preferred-Knowledge-Depth: Detailed
+Preferred-Response-Style: Helpful, concise, technically accurate
+Preferred-Tone: Professional but friendly
+
+# Context Information
+Primary-Language: English
+Last-Updated: 2025-03-13
+Owner: Matthew Hartman
+
+# Tool Categories
+Category: Design Tools
+- SVG Converter: Convert SVG files to PNG, JPEG, WebP and other web formats with customizable settings
+- CSS Shadow Generator: Customize box shadows and text shadows visually and copy the CSS with one click
+- Placeholder Image Generator: Instantly generate placeholder images with custom dimensions, colors, and text
+
+Category: Color & Design Utilities
+- Color Converter: Convert between different color formats: HEX, RGB, HSL, and more
+- CSS Gradient Generator: Quickly generate CSS code for linear, radial, and conic gradients with real-time preview
+- Color Palette Generator: Generate attractive, matching color palettes for UI projects based on color theory
+
+Category: Developer Tools
+- JSON ↔ YAML Converter: Convert between JSON and YAML formats for configuration files and data interchange
+- Base64 Encoder/Decoder: Encode text to Base64 or decode Base64 strings back to plain text
+- Item Deduplicator: Remove duplicate items from lists, text, or data quickly and efficiently
+- Regex Tester: Test and debug regular expressions in real-time with match highlighting
+- Code Formatter: Format JavaScript, HTML, CSS, XML, JSON, or SQL code instantly with proper indentation
+- Markdown Previewer: Write markdown and instantly preview or export HTML with live preview
+- Diff Checker: Quickly compare differences between two snippets of text or code
+
+Category: Conversion Tools
+- Unix Timestamp Converter: Convert between Unix timestamps and human-readable dates and times
+- Hash Generator: Generate MD5, SHA-256, SHA-512 and other cryptographic hashes
+
+Category: Math Tools
+- Physics Calculator: Solve projectile motion problems, calculate time, height, and distance
+
+# Privacy and Data
+Data-Processing-Location: Client-side only
+Data-Storage: None (all processing happens in the browser, no user data is stored on servers)
+Privacy-Policy-URL: https://toolnook.dev/privacy.html
+
+# Important Notes
+All tools on ToolNook.dev are:
+- Free to use with no limitations
+- Client-side only (your data never leaves your browser)
+- No account required
+- Optimized for speed and performance
+
+# Crawling Preferences
+Allow-AI-Crawling: Allow
+Allow-AI-Knowledge-Building: Allow
+Do-Not-Index-Paths: None
+
+# Contact
+Contact: https://toolnook.dev/about.html
+Creator: Matthew Hartman
