@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tag Analyzer & AI Readiness Scanner | SEO & LLM Optimization Tool</title>
+    <meta name="description" content="Free tool to analyze meta tags, SEO elements, and AI readiness. Check for llms.txt, AI guidance links, and optimize for both search engines and AI assistants like ChatGPT and Claude.">
+    <meta name="keywords" content="meta tag analyzer, seo checker, ai readiness, llms.txt validator, ai guidance, llm optimization, meta description checker, open graph checker, seo analysis, chatgpt optimization">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Meta Tag Analyzer & AI Readiness Scanner | SEO & LLM Optimization">
+    <meta property="og:description" content="Analyze your website for SEO and AI readiness. Check meta tags, Open Graph, llms.txt compatibility, and AI guidance links to improve visibility in both search engines and AI assistants.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolnook.dev/tools/meta-tag-analyzer/">
+    <meta property="og:image" content="https://toolnook.dev/assets/social/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ToolNook.dev">
+    <link rel="ai-guidance" href="/llms.txt" type="text/plain">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meta Tag Analyzer & AI Readiness Scanner">
+    <meta name="twitter:description" content="Free tool to check your website's SEO factors and AI readiness. Optimize for search engines and AI assistants like ChatGPT and Claude with llms.txt validation.">
+    <meta name="twitter:image" content="https://toolnook.dev/assets/social/social-preview.png">
+    
+    <link rel="canonical" href="https://toolnook.dev/tools/meta-tag-analyzer/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/common/css/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="/common/js/main.js" defer></script>
+    <script src="./script.js" defer></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDVTX9Q82T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XDVTX9Q82T');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1699935326076577"
+     crossorigin="anonymous"></script>
+     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Meta Tag Analyzer & AI Readiness Scanner",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Analyze your website for both search engine optimization and AI readiness. Check meta tags, Open Graph tags, llms.txt compatibility, and AI guidance links to improve visibility in both search engines and AI assistants like ChatGPT and Claude.",
+      "url": "https://toolnook.dev/tools/meta-tag-analyzer/",
+      "featureList": [
+        "Meta title analysis",
+        "Meta description checker",
+        "Open Graph tag validation",
+        "Twitter card verification",
+        "llms.txt file validation",
+        "AI guidance link detection",
+        "AI readiness assessment",
+        "SEO recommendations",
+        "Structured data validation"
+      ],
+      "keywords": "meta tag analyzer, seo checker, ai readiness, llms.txt validator, ai guidance, llm optimization, meta description checker, open graph checker, chatgpt optimization"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="/toolnook.png" alt="Header background pattern" class="header-image">
+        <div class="container">
+            <h1>ToolNook.dev</h1>
+            <p>A collection of handy micro-tools for everyday tasks</p>
+        </div>
+    </header>
+    <main class="container">
+        <div class="tool-header">
+            <a href="/" class="back-link">&larr; Back to All Tools</a>
+            <h2>Meta Tag Analyzer & AI Readiness Scanner</h2>
+            <p>Analyze and optimize your website for both search engines and AI assistants. Check meta tags, SEO elements, llms.txt compatibility, and AI guidance links.</p>
+        </div>
+        
+        <!-- Ad banner below header -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="tool-container">
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="url-input">Enter Website URL:</label>
+                    <div class="input-with-button">
+                        <input type="url" id="url-input" placeholder="https://example.com" autocomplete="off">
+                        <button id="analyze-btn" class="btn">Analyze</button>
+                    </div>
+                    <div class="help-text">Enter a complete URL including https:// or http://</div>
+                </div>
+                
+                <div class="popular-sites">
+                    <h3>Try with popular websites:</h3>
+                    <div class="sites-grid">
+                        <button class="site-btn" data-url="https://twitter.com">Twitter</button>
+                        <button class="site-btn" data-url="https://github.com">GitHub</button>
+                        <button class="site-btn" data-url="https://www.bbc.com">BBC</button>
+                        <button class="site-btn" data-url="https://www.nytimes.com">NY Times</button>
+                        <button class="site-btn" data-url="https://www.amazon.com">Amazon</button>
+                    </div>
+                </div>
+                
+                <div class="or-option">
+                    <span>OR</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="html-input">Paste HTML Code:</label>
+                    <textarea id="html-input" placeholder="Paste the HTML code of your webpage here..."></textarea>
+                    <div class="help-text">Paste the source HTML of your webpage to analyze it directly</div>
+                    <button id="analyze-html-btn" class="btn">Analyze HTML</button>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing meta tags...</p>
+                </div>
+            </div>
+            
+            <div class="results-section" id="results-section">
+                <div id="results-placeholder" class="placeholder-message">
+                    <div class="placeholder-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    <p>Enter a URL or paste HTML code to analyze meta tags and get SEO recommendations</p>
+                </div>
+                
+                <div id="error-message" class="error-message hidden">
+                    <div class="error-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Error Analyzing URL</h3>
+                    <p id="error-details">There was a problem analyzing this URL. Please check the URL and try again.</p>
+                    <div class="error-note cors-explanation">
+                        <div class="cors-header">
+                            <strong>Why can't I analyze external websites?</strong>
+                        </div>
+                        <p>Due to browser security restrictions (CORS), this client-side tool cannot directly fetch content from other websites. This is a security feature built into all modern browsers to protect users.</p>
+                        <div class="cors-solution">
+                            <strong>Solution:</strong> Please use one of these options:
+                            <ol>
+                                <li>View the page source of the website (right-click → View Page Source)</li>
+                                <li>Copy the entire HTML code</li>
+                                <li>Paste it in the HTML input tab below</li>
+                            </ol>
+                            <div class="cors-buttons">
+                                <button id="html-input-tab-btn" class="btn btn-small">Go to HTML Input Tab</button>
+                                <button id="server-side-info-btn" class="btn btn-small btn-outline">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="analysis-results" class="analysis-results hidden">
+                    <div class="website-info">
+                        <h3 id="site-title">Website Analysis</h3>
+                        <p id="site-url" class="site-url"></p>
+                    </div>
+                    
+                    <!-- SEO Score -->
+                    <div class="seo-score-container">
+                        <div class="seo-score-header">
+                            <h3>SEO Score</h3>
+                            <div class="score-details">
+                                Based on essential meta tag implementation and best practices
+                            </div>
+                        </div>
+                        <div class="seo-score">
+                            <div class="score-circle">
+                                <svg viewBox="0 0 36 36" class="score-circle-svg">
+                                    <path class="score-circle-bg"
+                                        d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        stroke-width="3"
+                                        fill="none"
+                                    />
+                                    <path id="score-circle-value" class="score-circle-value"
+                                        d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        stroke-width="3"
+                                        fill="none"
+                                        stroke-dasharray="100, 100"
+                                    />
+                                </svg>
+                                <div class="score-text">
+                                    <span id="score-value">-</span><span>%</span>
+                                </div>
+                            </div>
+                            <div class="score-summary">
+                                <div id="score-message">Analyze a URL to see your score</div>
+                                <div id="score-issues"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Navigation -->
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" data-tab="basic">Basic SEO</button>
+                        <button class="tab-btn" data-tab="ai-readiness">AI Readiness</button>
+                        <button class="tab-btn" data-tab="social">Social Media</button>
+                        <button class="tab-btn" data-tab="advanced">Advanced</button>
+                        <button class="tab-btn" data-tab="raw">Raw Meta Tags</button>
+                    </div>
+                    
+                    <!-- Basic SEO Tab -->
+                    <div id="basic-tab" class="tab-content active">
+                        <div class="meta-tag-group">
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Title Tag</h4>
+                                    <div id="title-tag-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="title-tag-value" class="tag-value"></div>
+                                    <div id="title-tag-info" class="tag-info"></div>
+                                </div>
+                                <div id="title-tag-rec" class="tag-recommendation"></div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Meta Description</h4>
+                                    <div id="meta-desc-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="meta-desc-value" class="tag-value"></div>
+                                    <div id="meta-desc-info" class="tag-info"></div>
+                                </div>
+                                <div id="meta-desc-rec" class="tag-recommendation"></div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Meta Keywords</h4>
+                                    <div id="meta-keywords-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="meta-keywords-value" class="tag-value"></div>
+                                    <div id="meta-keywords-info" class="tag-info"></div>
+                                </div>
+                                <div id="meta-keywords-rec" class="tag-recommendation"></div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Canonical URL</h4>
+                                    <div id="canonical-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="canonical-value" class="tag-value"></div>
+                                    <div id="canonical-info" class="tag-info"></div>
+                                </div>
+                                <div id="canonical-rec" class="tag-recommendation"></div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Robots Directives</h4>
+                                    <div id="robots-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="robots-value" class="tag-value"></div>
+                                    <div id="robots-info" class="tag-info"></div>
+                                </div>
+                                <div id="robots-rec" class="tag-recommendation"></div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Viewport</h4>
+                                    <div id="viewport-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="viewport-value" class="tag-value"></div>
+                                    <div id="viewport-info" class="tag-info"></div>
+                                </div>
+                                <div id="viewport-rec" class="tag-recommendation"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Tab -->
+                    <div id="social-tab" class="tab-content">
+                        <div class="meta-tag-group">
+                            <div class="meta-tag-subheader">Open Graph Tags</div>
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>og:title</h4>
+                                    <div id="og-title-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="og-title-value" class="tag-value"></div>
+                                    <div id="og-title-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>og:description</h4>
+                                    <div id="og-desc-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="og-desc-value" class="tag-value"></div>
+                                    <div id="og-desc-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>og:image</h4>
+                                    <div id="og-image-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="og-image-value" class="tag-value"></div>
+                                    <div id="og-image-info" class="tag-info"></div>
+                                    <div id="og-image-preview" class="image-preview"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>og:url</h4>
+                                    <div id="og-url-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="og-url-value" class="tag-value"></div>
+                                    <div id="og-url-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>og:type</h4>
+                                    <div id="og-type-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="og-type-value" class="tag-value"></div>
+                                    <div id="og-type-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-subheader">Twitter Card Tags</div>
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>twitter:card</h4>
+                                    <div id="twitter-card-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="twitter-card-value" class="tag-value"></div>
+                                    <div id="twitter-card-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>twitter:title</h4>
+                                    <div id="twitter-title-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="twitter-title-value" class="tag-value"></div>
+                                    <div id="twitter-title-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>twitter:description</h4>
+                                    <div id="twitter-desc-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="twitter-desc-value" class="tag-value"></div>
+                                    <div id="twitter-desc-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>twitter:image</h4>
+                                    <div id="twitter-image-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="twitter-image-value" class="tag-value"></div>
+                                    <div id="twitter-image-info" class="tag-info"></div>
+                                    <div id="twitter-image-preview" class="image-preview"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Advanced Tab -->
+                    <div id="advanced-tab" class="tab-content">
+                        <div class="meta-tag-group">
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Charset</h4>
+                                    <div id="charset-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="charset-value" class="tag-value"></div>
+                                    <div id="charset-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Language</h4>
+                                    <div id="language-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="language-value" class="tag-value"></div>
+                                    <div id="language-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Favicons</h4>
+                                    <div id="favicon-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="favicon-value" class="tag-value"></div>
+                                    <div id="favicon-info" class="tag-info"></div>
+                                    <div id="favicon-preview" class="image-preview favicon-preview"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Structured Data</h4>
+                                    <div id="structured-data-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="structured-data-value" class="tag-value"></div>
+                                    <div id="structured-data-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>Headings Structure</h4>
+                                    <div id="headings-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="headings-value" class="tag-value"></div>
+                                    <div id="headings-info" class="tag-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Readiness Tab -->
+                    <div id="ai-readiness-tab" class="tab-content">
+                        <div class="meta-tag-group">
+                            <div class="ai-readiness-intro">
+                                <p>AI Readiness checks assess how well your website communicates with AI systems like ChatGPT, Claude, and search engines.</p>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>llms.txt File</h4>
+                                    <div id="llms-txt-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="llms-txt-value" class="tag-value"></div>
+                                    <div id="llms-txt-info" class="tag-info"></div>
+                                    <div id="llms-txt-rec" class="tag-recommendation"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>AI Guidance Link</h4>
+                                    <div id="ai-guidance-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="ai-guidance-value" class="tag-value"></div>
+                                    <div id="ai-guidance-info" class="tag-info"></div>
+                                    <div id="ai-guidance-rec" class="tag-recommendation"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="meta-tag-item">
+                                <div class="meta-tag-header">
+                                    <h4>llms.txt Content Analysis</h4>
+                                    <div id="llms-content-status" class="tag-status"></div>
+                                </div>
+                                <div class="meta-tag-content">
+                                    <div id="llms-content-value" class="tag-value"></div>
+                                    <div id="llms-content-info" class="tag-info"></div>
+                                    <div id="llms-content-rec" class="tag-recommendation"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-readiness-resources">
+                            <h4>Resources for AI Readiness</h4>
+                            <ul>
+                                <li><a href="https://llmstxt.org/" target="_blank">llms.txt Standard</a> - Official documentation for the llms.txt format</li>
+                                <li><a href="https://www.anthropic.com/news/claude-gets-better-at-accurately-citing-sources" target="_blank">AI Citation Guidelines</a> - How AI systems cite web content</li>
+                                <li><a href="https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag" target="_blank">Google Crawling Guidelines</a> - Controls for AI and search crawlers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Raw Meta Tags Tab -->
+                    <div id="raw-tab" class="tab-content">
+                        <div class="copy-raw">
+                            <button id="copy-raw-tags" class="btn btn-small">Copy All Meta Tags</button>
+                        </div>
+                        <div class="raw-tags-container">
+                            <pre id="raw-tags-content" class="raw-tags"></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="download-report" class="btn">Download Analysis Report</button>
+                        <button id="save-analysis" class="btn btn-outline">Save Analysis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="seo-tips-section">
+            <h3>Meta Tag SEO Best Practices</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h4>Title Tag</h4>
+                    <p>Keep your title tag between 50-60 characters to ensure it displays correctly in search results. Use your primary keyword near the beginning of the title.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Meta Description</h4>
+                    <p>Write compelling meta descriptions between 120-160 characters. Include your main keyword and a call-to-action to improve click-through rates.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <h4>Open Graph Tags</h4>
+                    <p>Always include og:title, og:description, og:image, and og:url tags to control how your content appears when shared on Facebook and other platforms.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </div>
+                    <h4>Twitter Cards</h4>
+                    <p>Implement twitter:card, twitter:title, twitter:description, and twitter:image tags to enhance how your content appears when shared on Twitter.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                    </div>
+                    <h4>Canonical URL</h4>
+                    <p>Use canonical tags to tell search engines which version of a page is the preferred one to index, especially if you have duplicate content issues.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h4>Viewport Meta Tag</h4>
+                    <p>Always include a viewport meta tag to ensure your website is responsive and mobile-friendly, which is a significant ranking factor for search engines.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="saved-analyses-section">
+            <h3>Your Saved Analyses</h3>
+            <div id="saved-analyses-container">
+                <p class="placeholder">Your saved analyses will appear here. Data is stored in your browser only.</p>
+            </div>
+        </div>
+
+        <!-- Suggested Tools Section -->
+        <div class="suggested-tools">
+            <h3>You might also like</h3>
+            <div class="tools-grid">
+                <a href="/tools/seo-keyword-generator/" class="tool-card-small">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    </svg>
+                    <div class="content">
+                        <h4>SEO Keyword Generator</h4>
+                        <p>Generate keywords and content ideas for your website</p>
+                    </div>
+                </a>
+                <a href="/tools/markdown-previewer/" class="tool-card-small">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <div class="content">
+                        <h4>Markdown Previewer</h4>
+                        <p>Write and preview markdown for your content</p>
+                    </div>
+                </a>
+                <a href="/tools/code-formatter/" class="tool-card-small">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <div class="content">
+                        <h4>Code Formatter</h4>
+                        <p>Format HTML and CSS code for your website</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Ad banner above footer -->
+        <div class="ad-container ad-horizontal">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1699935326076577"
+                 data-ad-slot="9876543210"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ToolNook.dev - All tools are free to use | <a href="/privacy.html" style="color:var(--primary-color);">Privacy Policy</a> | <a href="/about.html" style="color:var(--primary-color);">About</a></p>
+        </div>
+    </footer>
+</body>
+</html>

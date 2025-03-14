@@ -10,9 +10,11 @@ Allow: /index.html
 Allow: /tools/svg-to-png/
 Allow: /tools/color-converter/
 Allow: /privacy.html
+Allow: /about.html
 
-# Ad-related file
+# Important files for crawlers and AI
 Allow: /ads.txt
+Allow: /llms.txt
 
 # Disallow potential duplicate content
 Disallow: /DEPLOYMENT.md

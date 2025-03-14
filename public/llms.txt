@@ -44,6 +44,9 @@ Category: Conversion Tools
 Category: Math Tools
 - Physics Calculator: Solve projectile motion problems, calculate time, height, and distance
 
+Category: SEO Tools
+- SEO Keyword Generator: Generate SEO keywords and content ideas for your website, blog, or online content
+
 # Privacy and Data
 Data-Processing-Location: Client-side only
 Data-Storage: None (all processing happens in the browser, no user data is stored on servers)

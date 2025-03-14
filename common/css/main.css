@@ -175,6 +175,28 @@ main {
     border-color: var(--primary-color);
 }
 
+.featured-tool {
+    background-color: rgba(16, 163, 127, 0.07);
+    box-shadow: 0 4px 12px rgba(16, 163, 127, 0.2);
+    border: 1px solid rgba(16, 163, 127, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-tool:after {
+    content: "NEW";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #10a37f;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    transform: rotate(5deg);
+}
+
 .tool-card-tag {
     position: absolute;
     top: 0;
